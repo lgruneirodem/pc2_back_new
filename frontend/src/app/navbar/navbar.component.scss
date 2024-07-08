@@ -1,0 +1,98 @@
+@import '../app.component';
+
+.navbar {
+   position: fixed;  //Para que esté dentro de la vista
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   z-index: 20000;  
+   
+}
+.custom-text-color {
+   color: $blanco;
+ }
+.bg-custom{
+   background-color: $negro;
+}
+// .navbar-nav .nav-item .nav-link:hover {
+//    color: #b88639; // Cambia el color del texto al pasar el cursor
+// }
+.navbar-nav .nav-item .nav-link{
+   font-family: 'Barlow', sans-serif;
+}
+
+#logindentro p{
+   margin-top: 1vh;
+   font-family: 'Barlow', sans-serif;
+}
+.scrolled-color {
+   background-color: $dorado;
+   color: $blanco;
+   border-color: $dorado;
+ }
+.container {
+   display: flex;
+   align-items: center;
+}
+.nav-link:hover {
+   color: $blanco;
+ }
+
+
+.nav-item.active .nav-link {
+   position: relative;
+ }
+
+ .nav-item.active .nav-link::after {
+   content: ''; // Pseudo-elemento para el indicador 
+   position: absolute;
+   bottom: -2px; // Posición inicial del indicador 
+   left: 0;
+   width: 0; // Ancho inicial del indicador 
+   height: 2px; // Altura del indicador 
+   background-color: $dorado;
+   transition: width 0.3s ease; 
+   width: 100%;
+   left: 0;
+ }
+
+.nav-link:hover {
+   color: $dorado; // Color de texto para el elemento activo
+ }
+
+
+.nav-item.active .nav-link {
+   position: relative; // Posición relativa para el elemento de navegación 
+   // color: #ffc107; // Color de texto para el elemento activo 
+ }
+ 
+@media(max-width:991px){
+   .sidebar{
+      background-color: $grissemit;
+      backdrop-filter: blur(10px);
+      z-index: 20000;
+   }
+
+   .offcanvas-body{
+      display: flex;
+      justify-content: center;
+      
+   }
+
+   .navbar{
+      display: flex;
+      justify-content: center;
+   }
+   .navbar-nav .nav-item {
+      margin-bottom: 15px; 
+      
+
+    }
+}
+
+ .login-button:hover {
+   background-color: $dorado;
+   color: $blanco;
+   border-color: $dorado;
+ }

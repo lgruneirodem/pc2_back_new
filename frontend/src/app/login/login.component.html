@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up" *ngIf="isRegistering">
+            <form id="signUpForm" (ngSubmit)="register()">
+                <h1>Crea una cuenta</h1>
+                <input class="inputlogin" type="text" placeholder="Nombre" [(ngModel)]="nombre" name="nombre" required>
+                <input class="inputlogin" type="email" placeholder="Correo" [(ngModel)]="email" name="email"required>
+                <input class="inputlogin" type="text" placeholder="Usuario" [(ngModel)]="usuario" name="usuario" required>
+                <input class="inputlogin" type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required>
+                <input class="inputlogin" type="password" placeholder="Confirmar Contraseña" [(ngModel)]="password_confirmation" name="password_confirmation" required>
+                <!--<mat-form-field>
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>-->
+                <!-- <input type="text" placeholder="Género" required> -->
+                <div class="genero">
+                    <h2> Género </h2>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Femenino</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Masculino</label>
+                    </div>
+                </div>                
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+        <div class="form-container sign-in" *ngIf="!isRegistering">
+            <form id="signInForm" (ngSubmit)="login()">
+                <h1>Accede a tu cuenta</h1>
+                <input class="inputlogin"type="email" placeholder="Correo" [(ngModel)]="email" name="email" required>
+                <input class="inputlogin" type="password" placeholder="Contraseña" [(ngModel)]="password" name="password"  required>
+                <a href="#">¿Has olvidado tu contraseña?</a>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>¡Bienvenido/a de nuevo!</h1>
+                    <p>¿Ya tienes cuenta? <br> Retoma tu progreso hacia la victoria</p>
+                    <button class="hidden" id="login" (click)="toggleSignIn()">Inicia Sesión</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>¡Bienvenido/a!</h1>
+                    <p>¿Aún no estás registrado? <br> Comienza a potenciar tu juego</p>
+                    <button class="hidden" id="register" (click)="toggleSignUp()">Regístrate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

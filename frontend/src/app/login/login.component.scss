@@ -1,0 +1,336 @@
+@import '../app.component';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: $body;
+    //background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    padding-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+.container p{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container span{
+    font-size: 12px;
+}
+
+.container a{
+    color: $gris;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container form{
+    background-color: $blanco;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    padding: 0 40px;
+    height: 100%;
+}
+
+.inputlogin{
+    background-color: $input;
+    border: none;
+    //margin: 8px 0;
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.container .sign-up button{
+
+    margin-top: 20px;
+   
+}
+.form-container{
+    
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in{
+    transform: translateX(100%);
+}
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.container.active .toggle-container{
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle{
+    background-image: linear-gradient(to right, $login, $negrosemit), url(../../assets/img/fondodlamejor.png);
+    height: 100%;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: $blanco;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel {
+    // background-image:  linear-gradient(to right, rgba(63, 73, 151, 0.3), rgba(0, 0, 0, 0.8)), url(../../assets/img/Resim.jpg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+    overflow: hidden; /* Asegura que el contenido no se salga del contenedor */
+}
+
+
+.toggle-left{
+    background-image: linear-gradient(to left, $login, $negrosemit), url(../../assets/img/jugadorizquierda.jpg);
+    transform: translateX(-200%);
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    position: relative; /* Asegura que el contenido no se salga del contenedor */
+    overflow: hidden; /* Asegura que el contenido no se salga del contenedor */
+}
+
+.container.active .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    background-image: linear-gradient(to right,$toggleright, $toggleleft), url(../../assets/img/Resim.jpg);
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right{
+    transform: translateX(200%);
+}
+
+.container{
+    background-color: $blanco;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px $negrosemit;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 80%;
+    height: 80%;
+    // min-height: 480px;
+}
+
+.container button{
+    background-color: $azulosc;
+    color: $blanco;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.container button:hover{
+    transform: scale(1.05);
+}
+
+.container button.hidden{
+    background-color: transparent;
+    border-color: $blanco;
+    transition: 0.5s;
+}
+
+.container button.hidden:hover {
+    background-color: $dorado;
+    border-color: $dorado;
+}
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.container.active .toggle-container{
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.container.active .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right{
+    transform: translateX(200%);
+}
+
+.genero {
+    margin-top: 20px; /* Espaciado entre los radios y otros elementos */
+}
+
+.form-check {
+    display: block; // Hace que cada form-check se muestre como un bloque (verticalmente)
+    margin-bottom: 10px; // Espaciado entre cada form-check 
+}
+
+.form-check-input {
+    margin-right: 5px; // Espaciado entre el input y la etiqueta 
+}
+
+.form-check-label{
+    size: 5px;
+}
+
+.drop-toggle{
+    background-color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    border: 1px solid #ccc;
+    width: 233px;
+    text-align: left;
+}
+.drop-toggle i{
+    float:right;
+}
+.drop-show {
+    padding: 4px;
+    width: 222px;
+    background-color: #FFF;
+    border: 1px solid #BABABA;
+    position: absolute;
+    z-index: 100;
+    -webkit-box-shadow: 0 6px 10px rgba(0,0,0,.15);
+    -moz-box-shadow: 0 6px 10px rgba(0,0,0,.15);
+    box-shadow: 0 6px 10px rgba(0,0,0,.15);
+    margin-left: 1px;
+}
+.drop-show label{
+    display:block;
+    font-size:15px;
+    cursor: pointer;
+}
+.drop-show label input{
+    vertical-align: top;
+}
+.drop-show label span{
+    display:inline-block;
+}
+
+.form-check-label{
+    font-size: 12px;
+}
+
+h2{
+    font-size: 15px;
+}

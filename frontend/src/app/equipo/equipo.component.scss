@@ -1,0 +1,24 @@
+@import '../app.component';
+
+body {
+    width: 100%;
+    height: 100%;
+    padding-top: 125px;
+    background-color: $body ;
+}
+
+.card{
+    background-color: $tarjeta !important;
+}
+
+h3{
+    color: $azulfosf;
+}
+
+.nombre-equipo{
+    color: $blanco;
+}
+
+p{
+    color: $blanco;
+}

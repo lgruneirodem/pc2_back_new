@@ -1,0 +1,463 @@
+@import '../app.component';
+
+
+body {
+    width: 100%;
+    height: auto;
+    padding-top: 125px;
+    background-color: $negro ;
+}
+.section{
+    height: auto;
+    width: 100%;
+    margin-bottom: 0;
+}
+h1{
+    color: $blanco;
+}
+#equipos{
+    padding-top: 10px;
+    height: 70px;
+}
+#equipos img{
+    max-width: 50px;
+    height: auto;
+}
+//Ya no hay p
+// .carousel-caption p {
+//     color:rgb(201, 224, 244);
+// }
+
+#equipos .equipos-container {
+    display: flex;
+    flex-wrap: nowrap; // Evitar que las imágenes se envuelvan en varias líneas
+    // overflow-x: auto;
+    justify-content: space-between;
+}
+
+// .carousel-item img {
+//     max-width: 40%;
+//     height: auto;
+    
+// }
+
+h2, h3, p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+h3, p{
+    color: rgb(141, 135, 135);
+}
+
+//sección de introducción
+#introduccion{
+    background-image: 
+    linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.3)
+    ),
+    url('/assets/img/fondofutbol.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-bottom: 5vh;
+    height: 600px;
+}
+
+#introduccion2{
+    background-image: 
+    linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.3)
+    ),
+    url('/assets/img/fondofutbol.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-bottom: 5vh;
+    height: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#introduccion h1{
+    // position: absolute;
+    // left: 0;
+    // padding-left: 150px;
+    // padding-bottom: 500px;
+    // margin-top: 200px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 80px; //hacer mas pequeño para vista movil
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+#introduccion2 h1{
+    // position: absolute;
+    // left: 0;
+    // padding-left: 150px;
+    // padding-bottom: 500px;
+    // margin-top: 200px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 80px; //hacer mas pequeño para vista movil
+    font-style: oblique;
+    font-weight: bolder;
+    margin-top: 75px;
+}
+
+#info h5{
+font-size: 40px;
+}
+
+#info p {
+    font-size: larger;
+}
+
+#descripcion h5 {
+font-size: 26px;
+}
+
+h2{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+    color: $blanco;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+#info h1{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+    font-style: italic;
+}
+
+h5{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: large;
+}
+
+#contact {
+    height: 100px;
+}
+
+#contact h2{
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+
+p{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(156, 155, 128);
+}
+
+.img-columna{
+    width: 100%;
+    height: auto;
+}
+
+//sección de introducción
+#info{
+    background: linear-gradient(to bottom, $azulgrisaceo, $negro);
+    display: block;
+    
+    padding-top: 2vh;
+    
+}
+#info h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+.card{
+    background-color: transparent;
+    border-color: transparent;
+}
+.card-title{
+    color: $blanco;
+}
+
+h5{
+    word-wrap: keep-all; // Permite que las palabras se dividan si no caben en el contenedor
+}
+
+// h5, p {
+//     word-break: break-all;
+// }
+
+//sección de descripción
+#descripcion{
+    // background-image:  url('/assets/img/humo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+    margin-bottom: 0;
+    color: $blanco;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+}
+// h2 #descripcion{
+//     padding-bottom: 10vh;
+// }
+
+#descripcion img:hover{
+    transform: scale(1);
+}
+
+.logo2{
+    transform: scale(.8);
+}
+#pronostico{
+   
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.col{
+    // margin-top: 5vh;
+    // margin-bottom: 2vh;
+    // margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    position: relative;
+    
+
+}
+
+
+.img-columna{
+    width: 40%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 1vw; 
+}
+
+//sección de contact
+#contact {
+    // background: linear-gradient(to bottom, $azulgrisaceo, $negro);
+    margin-top: 0; // Elimina el margen superior para evitar la línea blanca
+    // background-color: $azul;
+    height:70vh;
+}
+
+#contact .img {
+    height: 10px;
+}
+
+p #contact{
+    // margin-left: 5vw;
+}
+.color-izquierda {
+    background-color: $azulfosf; /* Color para la mitad izquierda */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
+.color-derecha {
+    background-color: $rojo; /* Color para la mitad derecha */
+    clip-path: polygon(0 0, 100% 0, 0 100%, 0% 100%);
+}
+.carousel-item img {
+    display: block;
+    // margin-right:55vw ;
+}
+// .carousel-item {
+   
+   
+// }
+img.hpe{
+    margin-left: -100px;
+}
+//ESTE ES EL QUE DESCOLOCA EL CAROUSEL, NO TOCAR!!
+// .carousel-inner {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+  
+//   .carousel-item {
+//     text-align: center; /* Asegura que el contenido dentro de cada item esté centrado horizontalmente */
+//   }
+  
+
+//sección de socios
+#imgSocios{
+    background-image: url('/assets/img/fondofoco.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 30px;
+    height: auto;
+}
+.logo1, .logo2{
+    margin-top: 5vh;
+}
+
+.logo2{
+    width: 80px;
+    height: auto;
+    padding-left: -0px;
+}
+
+.row {
+    margin: none; // Ajusta el margen izquierdo
+}
+
+.col {
+    padding: none; // Ajusta el relleno izquierdo
+}
+
+@media (max-width: 1030px ) {
+    #imgSocios {
+      flex-direction: column; //Cambiar la dirección del flexbox a columna
+      align-items: center; // Centrar los elementos en el eje horizontal
+    }
+
+    // #equipos {
+    //     flex-wrap: wrap; // Permitir que los elementos se envuelvan en filas
+    //     justify-content: space-around; // Distribuir los elementos uniformemente en el contenedor
+    //     margin-bottom: 30px;
+    //   }
+    //   #equipos img {
+    //     max-width: 40px; // Calcular el ancho de cada imagen en función del número de columnas (en este caso, 2 columnas)
+    //     margin-right: 10px; //Agregar un espacio entre las imágenes
+    //     margin-bottom: 10px; //Agregar un espacio entre las filas
+    //     height: auto;
+    //   }
+}
+
+@media (max-width: 970px ) {
+    #equipos .equipos-container img {
+        max-width: 40px;
+        height: auto;
+      }
+}
+
+@media (max-width: 775px ) {
+    #equipos .equipos-container img {
+        max-width: 25px;
+        height: auto;
+      }
+}
+
+@media (max-width: 520px ) {
+    #equipos .equipos-container {
+        flex-wrap: wrap; // Evitar que las imágenes se envuelvan en varias líneas
+    }
+}
+
+@media (max-width: 660px ) {
+    // #imgSocios {
+    //   flex-direction: column; // Cambiar la dirección del flexbox a columna
+    //   align-items: center; // Centrar los elementos en el eje horizontal 
+    // }
+
+    // #equipos {
+    //     flex-wrap: wrap; // Permitir que los elementos se envuelvan en filas */
+    //     justify-content: space-around; // Distribuir los elementos uniformemente en el contenedor
+    //     margin-bottom: 40px;
+    //   }
+    //   #equipos img {
+    //     width: 40px; // Calcular el ancho de cada imagen en función del número de columnas (en este caso, 2 columnas)
+    //     margin-right: 10px; // Agregar un espacio entre las imágenes
+    //     margin-bottom: 10px; // Agregar un espacio entre las filas
+    //     height: auto;
+    //   }
+}
+
+@media (max-width: 370px) {
+    // #equipos {
+    //     flex-wrap: wrap; // Permitir que los elementos se envuelvan en filas
+    //     justify-content: space-between; // Distribuir los elementos uniformemente en el contenedor
+    //     margin-bottom: 150px;
+    //   }
+    //   #equipos img {
+    //     width: 40px; // Calcular el ancho de cada imagen en función del número de columnas (en este caso, 2 columnas)
+    //     margin-right: 10px; // Agregar un espacio entre las imágenes
+    //     margin-bottom: 10px; // Agregar un espacio entre las filas
+    //     height: auto;
+    //   }
+}
+
+// .carousel-item {
+//     display: flex;
+//     justify-content: center; // Centra horizontalmente el contenido
+// }
+
+.carousel-item .d-block {
+    margin: 0 auto; // Centra horizontalmente el elemento
+}
+
+.carousel-item .d-block img {
+    max-width: 100%; /* La imagen no puede ser más ancha que el contenedor */
+    max-height: 100%; /* La imagen no puede ser más alta que el contenedor */
+    width: auto; /* La imagen se ajustará automáticamente al ancho máximo */
+    height: auto; /* La imagen se ajustará automáticamente a la altura máxima */
+  }  
+  
+
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover{
+    transform: scale(1.2);
+}
+
+#carouselExampleCaptions {
+    margin-bottom: 50px; /* Añadir margen inferior para separar del siguiente contenido */
+}
+
+#contact {
+    height: auto; /* Ajustar la altura para que se adapte al contenido */
+    padding-bottom: 50px; /* Añadir espacio adicional en la parte inferior */
+}
+
+/* Evitar superposición de elementos del carousel */
+.carousel-item {
+    height: auto;
+    margin-bottom: 50px; /* Añadir margen inferior */
+}
+
+#imgSocios {
+    background-image: url('/assets/img/fondofoco.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 30px; /* Añadir espacio superior */
+    padding-bottom: 30px; /* Añadir espacio inferior */
+    height: auto;
+}
+
+/* Ajustes adicionales para dispositivos móviles */
+@media (max-width: 1030px) {
+    #imgSocios {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px; /* Añadir espacio superior */
+        padding-bottom: 30px; /* Añadir espacio inferior */
+    }
+}

@@ -1,0 +1,214 @@
+@import '../app.component';
+
+body {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;  
+    padding-top: 150px;
+    background-color: $body;
+}
+
+.container-fluid {
+    height: 100%;
+    color: #ffffff;
+  }
+  
+  .sidebar {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #343a40;
+    padding-top: 20px;
+  }
+  
+  .sidebar-header {
+    padding: 20px;
+    text-align: center;
+    margin-top: 10vh;
+    color: $blanco;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: x-large;
+  }
+  
+  .sidebar-footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 5vh;
+    margin-left: 1vw;
+  }
+.list-group-item {
+    height: 7vh;
+    padding: 0; /* Elimina el relleno predeterminado de la lista */
+}
+
+.custom-input-group {
+    width: 500px;
+}
+
+.custom-input-group .btn {
+    width: 20%; /* Ajusta este valor según sea necesario */
+    height: 4vh;
+}
+
+.custom-btn {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.custom-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 0;
+    color: white;
+    box-shadow: none;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+    width: 40%;
+    margin-right: 1vw;
+    padding-top: 2vh;
+    height: 4vh;
+    
+}
+.nombre_columna{
+    margin-left: 2vw;
+    font-size: larger;
+}
+.custom-dropdown-toggle {
+    background-color: $toggle;
+    color: $blanco;
+    border-color: $toggle;
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+}
+
+.btn {
+    margin-left: 10px;
+    margin-top: 1vh;
+}
+
+.user-name {
+    margin-top: 2vh;
+    font-size: large;
+    font: bold;
+}
+
+.col-12 {
+    display: flex;
+    justify-content: center;
+}
+
+.list-group-item-custom {
+    background-color: $tarjeta;
+    color: $blanco;
+    border: $grisazulado;
+}
+
+.separator {
+    border-bottom: 1px solid $grisclaro; /* Añade un borde inferior de 1px sólido de color gris */
+    margin-top: 10px;
+    margin-bottom: 7px; /* Ajusta el espacio entre los elementos */
+    list-style: none;
+}
+
+.col-3 {
+    display: flex;
+    width: 100%;
+    padding-left: 100px;
+}
+
+.img-item {
+    display: flex;
+    justify-content: center;
+}
+
+.titulo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.titulo h1 {
+    color: $blanco;
+    margin-left: 23vw;
+    font-size: xx-large;
+}
+
+.card {
+    background-color: $tarjeta !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px $negro, 0 6px 20px $negro;
+    padding: 20px;
+    color: $blanco;
+}
+
+.card-header {
+    border-bottom: 1px solid $blanco;
+    text-align: center;
+}
+
+/* Nuevo CSS para alinear "Correo" y los correos correctamente */
+.list-group-item-custom .email-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea los elementos al centro */
+    text-align: center; /* Alinea el texto al centro dentro de la columna */
+}
+
+.btn-group .btn-danger {
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.btn-group .btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-group .dropdown-toggle {
+    background-color: #6c757d;
+    border: 1px solid #6c757d;
+}
+
+.custom-input-group {
+    width: 200px;
+}
+
+.custom-input {
+    border: 1px solid #6c757d;
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.custom-btn {
+    background-color: #6c757d;
+    border: 1px solid #6c757d;
+    color: #ffffff;
+}
+
+.custom-dropdown-toggle {
+    background-color: #6c757d;
+    border: 1px solid #6c757d;
+}
+
+.dropdown-menu {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.dropdown-item {
+    color: #ffffff;
+}
+
+.dropdown-item:hover {
+    background-color: #495057;
+}

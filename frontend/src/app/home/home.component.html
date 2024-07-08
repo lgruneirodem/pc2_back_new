@@ -1,0 +1,140 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<body>
+  <div id="equipos" class="seccion">
+    <div class="equipos-container">
+      <div *ngFor="let equipo of equipos">
+        <a routerLink="/equipo/{{equipo.nameCompacto}}"><img src="../assets/img/{{equipo.name}}.png" alt="{{equipo.nameCompacto}} logo"></a>
+      </div> 
+    </div>
+  </div>
+    <div id="introduccion" class="seccion">
+        <h1>POTENCIA TU JUEGO</h1>  
+    </div>
+    <div id="info" class="seccion" >
+        <h1>LOGRA LA VICTORIA</h1>
+        
+        <div class="row justify-content-center">
+            <div class="col-sm-4 mx-2 mb-3 mb-sm-1">
+              <div class="card text-center mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Asocia varias ligas a tu cuenta.</h5>
+                  <p class="card-text">¡Optimiza todas las plantillas que quieras y gana a tus amigos!</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 mx-2 mb-3 mb-sm-1">
+              <div class="card text-center mb-3">
+                <div class="card-body ">
+                  <h5 class="card-title" >Actualización cada partido.</h5>
+                  <p class="card-text" >Información actualizada cada partido para estar al tanto de cada jornada.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <h3></h3><p> </p>
+        <h3> </h3><p></p>
+    </div>
+
+    <div id="descripcion" class="seccion">
+        <h2>¿CÓMO LO HACEMOS?</h2>
+          <div class="row justify-content-center">
+            <div class="col-sm-2 mx-3 mb-3 mb-sm-1">
+              <div class="card text-center mb-3">
+                <div class="card-body">
+                  <img class="img-columna" id="analisis" src="../assets/img/iconos/analisis.png" alt="analisis logo">
+                      <h5 class="card-title">Análisis de mercado</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2 mx-3 mb-3 mb-sm-1">
+              <div class="card text-center mb-3">
+                <div class="card-body ">
+                  <img class="img-columna" id="pronostico" src="../assets/img/iconos/jugador-de-futbol.png" alt="jugador logo">
+                      <h5 class="card-title">Pronóstico del rendimiento de los jugadores</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2 mx-3 mb-3 mb-sm-1">
+              <div class="card text-center mb-3">
+                <div class="card-body ">
+                  <img class="img-columna" id="evaluacion" src="../assets/img/iconos/evaluacion.png" alt="evaluacion logo">
+                      <h5 class="card-title">Evaluación de tu plantilla</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-2 mx-3 mb-3 mb-sm-1">
+              <div class="card text-center mb-3">
+                <div class="card-body ">
+                  <img class="img-columna" id="estadistica"src="../assets/img/iconos/estadisiticas.png" alt="Estadisitica logo">
+                  <h5 class="card-title">Recopilación de estadísticas</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="contact" class="seccion">
+          <h2>QUIÉNES SOMOS</h2>
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a [routerLink]="'/Acerca'">
+                  <img src="../../assets/img/desarr.jpg" class="d-block" alt="...">
+                </a>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Conoce a nuestro equipo</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <a [routerLink]="'/Acerca'">
+                  <img src="../../assets/img/alianza.jpg" class="d-block" alt="...">
+                </a>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Conoce más sobre la alianza estratégica de la UEM y HPE</h5>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>        
+     
+       
+    
+    <div id="imgSocios" class="seccion">
+      <!-- <h2>SPONSORS</h2> -->
+        <div class="logo1">
+            <a href="https://misterfantasy.es/es/" target="_blank">
+                <img class="mf" src="../assets/img/misterfantasy_logo.png" alt="Misterfantasy">
+            </a>
+            
+        </div>
+        <div class="logo2">
+            <a href="https://www.hpe.com/es/es/home.html#" target="_blank">
+                <img class="hpe" src="../assets/img/hpeblanco.png" alt="HPE">
+            </a>
+            
+        </div>
+    </div>    
+
+</body>

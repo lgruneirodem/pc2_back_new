@@ -1,0 +1,26 @@
+@import '../app.component';
+
+body {
+    // width: 100%;
+    // height: 100%;
+    // display: flex; 
+    // justify-content: center;
+    // align-items: center; 
+    // padding-top: 100px;
+    // background: transparent;
+    // back
+}
+.mat-dialog-container {
+    // background-color: #070404; 
+    background-color: $negro;
+  }
+  
+.infoJugador {
+    background-color: $negrosemit; //pasar a variable global
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2{
+    color: $azul;
+}
