@@ -67,6 +67,16 @@ class JugadorController extends Controller
         return response()->json($basicStats);
     }
 
+    public function topJugadores()
+    {
+        $jugadores = Jugador::select('Nombre', 'Foto', 'equipo_id', 'puntos')
+                            ->orderByDesc('puntos')
+                            ->take(15)
+                            ->get();
+
+        return response()->json($jugadores);
+    }
+
     public function topJugadoresPorGoles()
     {
         $jugadores = Jugador::select('Nombre', 'Foto', 'equipo_id', 'goles')

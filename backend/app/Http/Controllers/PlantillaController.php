@@ -6,12 +6,24 @@ use Illuminate\Http\Request;
 
 class PlantillaController extends Controller
 {
-    /**
-     * Display the players of a specific plantilla.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function statsPlantilla($id)
+    {
+        // Buscar la plantilla por ID
+        $plantilla = Plantilla::findOrFail($id);
+
+        // Seleccionar solo las estadísticas básicas
+        $basicStats = [
+            'plantilla_id' => $plantilla->plantilla_id,
+            'Alineacion' => $plantilla->Alineacion,
+            'Media_puntosTotal' => $plantilla->Media_puntosTotal,
+            'saldo_actual' => $plantilla->saldo_actual,
+            'deudaMax' => $plantilla->deudaMax,
+            'usuario_id' => $plantilla->usuario_id
+        ];
+
+        // Devolver las estadísticas básicas como respuesta JSON
+        return response()->json($basicStats);
+    }
     public function jugadoresPorPlantilla($id)
     {
         // Buscar la plantilla por ID y cargar los jugadores asociados
@@ -69,5 +81,7 @@ class PlantillaController extends Controller
 
         return response()->json($jugadores);
     }
+
+
 }
 
