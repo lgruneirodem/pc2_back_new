@@ -1,12 +1,10 @@
 export class Equipos {
-    id: number;
-    name: string;
-    nameCompacto: string;
+    equipo_id: number;
+    nombre: string;
 
-        constructor(id: number=0, name: string = '', nameCompacto: string = '')
+        constructor(id: number=0, nombre: string = '')
     {
-        this.id = id;
-        this.name = name;
-        this.nameCompacto = nameCompacto;
+        this.equipo_id = id;
+        this.nombre = nombre;
     } 
 }

@@ -7,8 +7,8 @@
   <div id="equipos" class="seccion">
     <div class="equipos-container">
       <div *ngFor="let equipo of equipos">
-        <a routerLink="/equipo/{{equipo.nameCompacto}}"><img src="../assets/img/{{equipo.name}}.png" alt="{{equipo.nameCompacto}} logo"></a>
-      </div> 
+        <img [src]="'assets/img/' + equipo.nombre + '.png'" alt="{{ equipo.nombre }} logo">
+      </div>
     </div>
   </div>
     <div id="introduccion" class="seccion">

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Equipos } from '../models/equipos';
-import { EquiposService } from '../services/equipos.service';
+import { EquipoService } from '../services/equipo.service';
 
 @Component({
   selector: 'app-home',
@@ -18,12 +18,18 @@ export class HomeComponent {
   equipos: Equipos[] = [];
 
   // Llamamos a los servicios
-  constructor(private equiposService: EquiposService) {}
-  ngOnInit(): void{
-    // Funciones de los servicios
-    this.equiposService.GetAll().subscribe(equiposLeidos => {
-      // Guardamos los datos
-      this.equipos = equiposLeidos;
-    });
+  constructor(private equipoService: EquipoService) { }
+  ngOnInit(): void {
+    this.obtenerEquipos();
+  }
+  obtenerEquipos() {
+    this.equipoService.getAllEquipos().subscribe(
+      equiposLeidos => {
+        this.equipos = equiposLeidos;
+      },
+      error => {
+        console.error('Error al obtener los equipos:', error);
+      }
+    );
   }
 }
