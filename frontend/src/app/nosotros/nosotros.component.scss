@@ -56,13 +56,11 @@ h2{
 h3{
   left: 0;
   color: $blanco;
-  // padding-left: 150px;
-  // padding-bottom: 500px;
-  font-family: 'titulo Condensed', sans-serif;
+  font-family: $titulo;
   font-weight: $weightTitulo;
   font-size: $sizeEncabezado;
   font-style: oblique;
-  font-weight: bolder;
+  font-weight: $weightTitulo;
   display: flex;
   justify-content: center;
 }
@@ -91,7 +89,7 @@ h3{
 }
 
 #textoFotos{
-  font-family: 'titulo Condensed', sans-serif;
+  font-family: $titulo;
   font-size: xxx-large;
   color: $blanco;
   padding-top: 3vh;
@@ -120,10 +118,6 @@ h3{
   padding-top: 3vh;
   padding-left: 2vw;
   padding-right:2vw;
-}
-
-img .row-inicial{
-
 }
 
 .tituloColab{
