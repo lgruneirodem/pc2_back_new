@@ -1,3 +1,5 @@
+//COLORES
+
 $blanco: #ffffff;
 $azulosc: #020322; 
 $azul: #25252d;
@@ -21,3 +23,24 @@ $toggleright: rgb(20, 22, 38, .7);
 $toggleleft: rgba(7, 7, 13, 0.5);
 $grissemit: rgba(255,255,255,0.15);
 $input: #eeeded;
+$grisclarosemit: rgba(255, 255, 255, 0.4);
+$p: rgb(156, 155, 128);
+
+
+//FUENTES
+$titulo: 'Barlow Condensed', sans-serif;
+$h2: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+//ESTILOS LETRA
+$weightTitulo: 500;
+$sizeEncabezado: 80px;
+$styleEncabezado: oblique;
+$bolder: bolder;
+$bold: bold;
+
+//IMAGENES
+$nosotros: url("/assets/img/personas_sobreNosotros.png");
+$recomendaciones: url('/assets/img/fondofutbol.webp');
+$plantilla: url("/assets/img/plantilla2.webp");
+$footer: url('/assets/img/fondof2.jpg');
+$socios: url('/assets/img/fondofoco.jpg');

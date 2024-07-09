@@ -20,7 +20,6 @@
                                 <select (change)="onSelect($event, 1)" class="custom-select">
                                   <option *ngFor="let data of jsonData1" [value]="data.value">{{data.label}}</option>
                                 </select>
-                                <!-- <p *ngIf="selectedValue1">Selected Value: {{selectedValue1}}</p> -->
                             </div>                    
                         </div>                        
                     </div>
@@ -48,7 +47,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <!-- Repite para más elementos -->
+                            <!-- Aqui van los demás elementos -->
                         </ul>
                     </div>
                 </div>

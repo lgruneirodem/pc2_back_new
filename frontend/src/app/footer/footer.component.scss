@@ -2,20 +2,10 @@
 
 footer {
     color: $blanco; 
-    background-image: linear-gradient($azulosc_semit, $azulosc_semit), url('../../../src/assets/img/fondof2.jpg');
+    background-image: linear-gradient($azulosc_semit, $azulosc_semit), $footer;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Raleway', sans-serif;
-    
-    // background-position: center;
-    // background-color: black;
-    // bottom: 0;
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-around;
-    // font-size: 25px;
-    // padding: 20px;
-    // margin-top: auto;
 }
 
 .text-uppercase {
@@ -37,9 +27,4 @@ footer {
 .btn-floating .fab {
     color: $blanco;
     transition: .4s;
-}
-
-// Estilo para hacer que los iconos cambien de color con hover
-.btn-floating:hover .fab {
-    // color: var(--color3);
 }

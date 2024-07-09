@@ -11,7 +11,7 @@ body {
 
 .container-fluid {
     height: 100%;
-    color: #ffffff;
+    color: $blanco;
   }
   
   .sidebar {
@@ -43,7 +43,7 @@ body {
   }
 .list-group-item {
     height: 7vh;
-    padding: 0; /* Elimina el relleno predeterminado de la lista */
+    padding: 0; // Elimina el relleno predeterminado de la lista
 }
 
 .custom-input-group {
@@ -51,7 +51,7 @@ body {
 }
 
 .custom-input-group .btn {
-    width: 20%; /* Ajusta este valor según sea necesario */
+    width: 20%; 
     height: 4vh;
 }
 
@@ -65,9 +65,9 @@ body {
 .custom-input {
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid $blanco;
     border-radius: 0;
-    color: white;
+    color: $blanco;
     box-shadow: none;
     margin-bottom: 2vh;
     margin-top: 1vh;
@@ -113,9 +113,9 @@ body {
 }
 
 .separator {
-    border-bottom: 1px solid $grisclaro; /* Añade un borde inferior de 1px sólido de color gris */
+    border-bottom: 1px solid $grisclaro;
     margin-top: 10px;
-    margin-bottom: 7px; /* Ajusta el espacio entre los elementos */
+    margin-bottom: 7px;
     list-style: none;
 }
 
@@ -157,26 +157,26 @@ body {
     text-align: center;
 }
 
-/* Nuevo CSS para alinear "Correo" y los correos correctamente */
+// Alinear
 .list-group-item-custom .email-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Alinea los elementos al centro */
-    text-align: center; /* Alinea el texto al centro dentro de la columna */
+    align-items: center;
+    text-align: center; 
 }
 
 .btn-group .btn-danger {
-    background-color: #dc3545;
-    border: 1px solid #dc3545;
+    background-color: $rojo;
+    border: 1px solid $rojo;
 }
 
 .btn-group .btn-danger:hover {
-    background-color: #c82333;
+    background-color: $rojo;
 }
 
 .btn-group .dropdown-toggle {
-    background-color: #6c757d;
-    border: 1px solid #6c757d;
+    background-color: $gris;
+    border: 1px solid $gris;
 }
 
 .custom-input-group {
@@ -184,31 +184,31 @@ body {
 }
 
 .custom-input {
-    border: 1px solid #6c757d;
-    background-color: #343a40;
-    color: #ffffff;
+    border: 1px solid $gris;
+    background-color: $toggle;
+    color: $blanco;
 }
 
 .custom-btn {
-    background-color: #6c757d;
-    border: 1px solid #6c757d;
-    color: #ffffff;
+    background-color: $gris;
+    border: 1px solid $gris;
+    color: $blanco;
 }
 
 .custom-dropdown-toggle {
-    background-color: #6c757d;
-    border: 1px solid #6c757d;
+    background-color: $gris;
+    border: 1px solid $gris;
 }
 
 .dropdown-menu {
-    background-color: #343a40;
-    color: #ffffff;
+    background-color: $toggle;
+    color: $blanco;
 }
 
 .dropdown-item {
-    color: #ffffff;
+    color: $blanco;
 }
 
 .dropdown-item:hover {
-    background-color: #495057;
+    background-color: $grisclaro;
 }
