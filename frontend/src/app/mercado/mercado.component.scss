@@ -20,7 +20,7 @@ body {
 margin: 0px;
 }
 .menu{
-    background-image: url('/assets/img/image-removebg-preview.png');
+    background-image: $campo;
     width: 45%;
     height: 50%;
     position: relative; // Para posicionar la caja absolutamente en relación con el contenedor
