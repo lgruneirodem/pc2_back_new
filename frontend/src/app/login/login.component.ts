@@ -23,44 +23,46 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  email: string = '';
-  password: string = '';
-  nombre: string = '';
-  usuario: string = '';
-  esAdmin: boolean = false;
+  credentials = {
+    nombre: '',
+    email: '',
+    user: '',
+    password: '',
+    password_confirmation: '',
+    esAdmin: false
+  };
 
-  constructor(private authService: AuthService, private router: Router) {}
+  loginCredentials = {
+    email: '',
+    password: ''
+  };
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   login() {
-    this.authService.login(this.email, this.password).subscribe(
-      response => {
-        console.log('Login successful', response);
-        this.router.navigate(['/Mercado']);
+    this.authService.login(this.loginCredentials).subscribe(
+      () => {
+        console.log('Login exitoso');
+        // Redireccionar a otra página después del login (por ejemplo, al dashboard)
+        this.router.navigate(['/Inicio']);
       },
       error => {
-        console.error('Login failed', error);
-        // handle error
+        console.log('Error en el login:', error);
+        // Mostrar mensaje de error al usuario si es necesario
       }
     );
   }
 
   register() {
-    const user = {
-      nombre: this.nombre,
-      email: this.email,
-      user: this.usuario,
-      password: this.password,
-      esAdmin: this.esAdmin
-    };
-
-    this.authService.register(this.nombre, this.email, this.usuario, this.password,this.esAdmin).subscribe(
-      response => {
-        console.log('Registration successful', response);
-        this.router.navigate(['/Mercado']);
+    this.authService.register(this.credentials).subscribe(
+      () => {
+        console.log('Registro exitoso');
+        // Redireccionar a otra página después del registro (por ejemplo, al login)
+        this.router.navigate(['/Inicio']);
       },
       error => {
-        console.error('Registration failed', error);
-        // handle error
+        console.log('Error en el registro:', error);
+        // Mostrar mensaje de error al usuario si es necesario
       }
     );
   }

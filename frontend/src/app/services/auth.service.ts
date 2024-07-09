@@ -1,39 +1,43 @@
+// auth.service.ts
+
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private apiUrl = 'http://127.0.0.1:8000/api'; // Reemplaza con la URL de tu backend Laravel
 
-  private apiUrl = "https://localhost.8000/api/"; 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/login`, { email, password })
+  register(usuario: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register`, usuario);
+  }
+
+  login(credentials: { email: string, password: string }): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, credentials)
       .pipe(
         map(response => {
-          if (response.token) {
-            localStorage.setItem('token', response.token);
-          }
+          // Guardar el token y otros datos en el almacenamiento local si es necesario
+          localStorage.setItem('access_token', response.access_token);
           return response;
         })
       );
   }
 
-  register(nombre: string, email: string, user: string, password: string, esAdmin: boolean): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/register`, email)
-      .pipe(
-        map(response => {
-          if (response.token) {
-            localStorage.setItem('token', response.token);
-          }
-          return response;
-        })
-      );
+  logout() {
+    // Puedes implementar el logout si es necesario
+    localStorage.removeItem('access_token');
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('access_token');
+  }
+
+  isLoggedIn(): boolean {
+    return this.getToken() !== null;
   }
 }
