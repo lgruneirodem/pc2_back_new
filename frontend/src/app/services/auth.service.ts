@@ -25,7 +25,7 @@ export class AuthService {
       );
   }
 
-  register(nombre: string, email: string, user: string, password: string, esAdmin: string): Observable<any> {
+  register(nombre: string, email: string, user: string, password: string, esAdmin: boolean): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/register`, email)
       .pipe(
         map(response => {
