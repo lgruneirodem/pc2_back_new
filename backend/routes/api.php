@@ -13,15 +13,19 @@ Route::get('/equipos', [EquipoController::class, 'index']);
 Route::get('/partidos/j{jornada_id}', [PartidoController::class, 'partidosPorJornada']);
 
 // Ruta para obtener todos los jugadores
-Route::get('/jugadores/{id}', [JugadorController::class, 'show']);
+
+Route::get('/jugadores/top-goles', [JugadorController::class, 'topJugadoresPorGoles']);
+Route::get('/jugadores/top-valor', [JugadorController::class, 'topJugadoresPorValor']);
+Route::get('/jugadores/top-media', [JugadorController::class, 'topJugadoresPorMediaPuntos']);
 Route::get('/jugadores/{id}/stats', [JugadorController::class, 'getBasicStats']);
+Route::get('/jugadores/{id}', [JugadorController::class, 'show']);
+Route::get('/jugadores', [JugadorController::class, 'index']);
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
 //grupo de endpoints para usuarios EsUsuario
 Route::group(['middleware' => [EsUsuarioMiddleware::class]], function () {
-    Route::get('/jugadores', [JugadorController::class, 'index']);
 });
 
 //grupo de endpoints para usuarios Admin
