@@ -366,7 +366,7 @@ img:hover{
     padding-bottom: 50px; 
 }
 
-/* Evitar superposición de elementos del carousel */
+// Evitar superposición de elementos del carousel
 .carousel-item {
     height: auto;
     margin-bottom: 50px;
@@ -385,7 +385,6 @@ img:hover{
     height: auto;
 }
 
-/* Ajustes adicionales para dispositivos móviles */
 @media (max-width: 1030px) {
     #imgSocios {
         flex-direction: column;
