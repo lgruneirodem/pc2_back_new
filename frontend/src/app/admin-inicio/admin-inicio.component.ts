@@ -22,6 +22,7 @@ export class AdminInicioComponent implements OnInit {
     { nombre: "Usuario 2", correo: "usuario2@example.com" },
     { nombre: "Usuario 3", correo: "usuario3@example.com" }
   ];
+  
   admins: Administrador[] = [
     { nombre: "admin 1" }
   ];
