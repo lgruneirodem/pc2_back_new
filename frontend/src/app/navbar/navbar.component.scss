@@ -15,9 +15,6 @@
 .bg-custom{
    background-color: $negro;
 }
-// .navbar-nav .nav-item .nav-link:hover {
-//    color: #b88639; // Cambia el color del texto al pasar el cursor
-// }
 .navbar-nav .nav-item .nav-link{
    font-family: $titulo;
 }
@@ -38,8 +35,6 @@
 .nav-link:hover {
    color: $blanco;
  }
-
-
 .nav-item.active .nav-link {
    position: relative;
  }
@@ -60,8 +55,6 @@
 .nav-link:hover {
    color: $dorado; // Color de texto para el elemento activo
  }
-
-
 .nav-item.active .nav-link {
    position: relative; // Posición relativa para el elemento de navegación 
  }
