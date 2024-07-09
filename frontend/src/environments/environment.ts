@@ -1,3 +1,3 @@
 export const environment = {
-    rutaApi: "https://localhost.8000/api/"
+    apiUrl: "https://localhost.8000/api/"
 }
