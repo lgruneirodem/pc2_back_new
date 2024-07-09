@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private apiUrl = environment.rutaApi; 
+  private apiUrl = "https://localhost.8000/api/"; 
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string): Observable<any> {
