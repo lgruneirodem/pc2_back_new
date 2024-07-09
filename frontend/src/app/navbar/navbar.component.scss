@@ -19,12 +19,12 @@
 //    color: #b88639; // Cambia el color del texto al pasar el cursor
 // }
 .navbar-nav .nav-item .nav-link{
-   font-family: 'Barlow', sans-serif;
+   font-family: $titulo;
 }
 
 #logindentro p{
    margin-top: 1vh;
-   font-family: 'Barlow', sans-serif;
+   font-family: $titulo;
 }
 .scrolled-color {
    background-color: $dorado;
@@ -64,7 +64,6 @@
 
 .nav-item.active .nav-link {
    position: relative; // Posición relativa para el elemento de navegación 
-   // color: #ffc107; // Color de texto para el elemento activo 
  }
  
 @media(max-width:991px){

@@ -13,17 +13,14 @@ body {
 }
 
 
-
 h1{
   left: 0;
   color: $body;
-  // padding-left: 150px;
-  // padding-bottom: 500px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 500;
-  font-size: 80px;
-  font-style: oblique;
-  font-weight: bolder;
+  font-family: $titulo;
+  font-weight: $weightTitulo;
+  font-size: $sizeEncabezado;
+  font-style: $styleEncabezado;
+  font-weight: $bolder;
   display: flex;
   justify-content: center;
 }
@@ -38,7 +35,7 @@ h1{
 }
 
 h1.titulo{
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: $titulo;
   font-weight: bold;
   color: $azul;
   display: flex;
@@ -48,12 +45,12 @@ h1.titulo{
 }
 
 h2{
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: bold;
+  font-family: $titulo;
+  font-weight: $bold;
   color: $blanco;
   display: flex;
   justify-content: center;
-  font-weight: 500;
+  font-weight: $weightTitulo;
 }
 
 h3{
@@ -61,9 +58,9 @@ h3{
   color: $blanco;
   // padding-left: 150px;
   // padding-bottom: 500px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 500;
-  font-size: 80px;
+  font-family: 'titulo Condensed', sans-serif;
+  font-weight: $weightTitulo;
+  font-size: $sizeEncabezado;
   font-style: oblique;
   font-weight: bolder;
   display: flex;
@@ -84,27 +81,21 @@ h3{
   
 }
 .card-title{
-  color: #fff;
+  color: $blanco;
   font-size:xx-large;
   margin-top: 2vh;
-  font-family: 'Barlow Condensed', sans-serif;;
+  font-family: $titulo;
 }
 #fotos {
-  // background: linear-gradient(to bottom, #989fa7, #575c60);
   height: 100px;
 }
 
 #textoFotos{
-  // background:$azul;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'titulo Condensed', sans-serif;
   font-size: xxx-large;
   color: $blanco;
   padding-top: 3vh;
   
-}
-
-.col-sm-12{
-  // background-color: $azul;
 }
 
 .row-inicial{
@@ -126,7 +117,6 @@ h3{
 }
 
 .componentes-grid{
-  // background: linear-gradient(to bottom, #989fa7, #575c60);
   padding-top: 3vh;
   padding-left: 2vw;
   padding-right:2vw;
@@ -148,7 +138,7 @@ img .row-inicial{
   padding-top: 5vh;
 }
 .titulo{
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: $titulo;
   font-size: 70px;
   line-height: 1.25;
   text-align: center;
@@ -164,7 +154,6 @@ img .row-inicial{
   text-align: center;
 }
 .mision{
-  // background-color:$azul;
   color: $blanco;
   margin: 0px;
   padding-left: 2vw;
@@ -181,7 +170,6 @@ img .row-inicial{
 }
 
 #intro{
-  // background-color:$azul;
   color: $blanco;
 
   
@@ -193,7 +181,6 @@ img .row-inicial{
 
 
 #info {
-  // background-color: $azul;
   margin: 0px;
   padding-left:1vw;
   padding-bottom: 3vh;
@@ -208,69 +195,18 @@ img .row-inicial{
 
 h2{
   color: $blanco;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family:$h2;
   font-size:large;
 }
 
-// @media screen and (max-width: 900px) {
-//    #imgInicio{
-//     width: 50px;
-//     height: auto;
-//    }
-// }
-
-// body {
-//   width: 100%;
-//   height: auto;
-//     background-color: #25252d;
-//     margin: 0;
-//     padding: 0;
-//     display: flex;
-//     justify-content: center; 
-//     align-items: center; 
-//     height: 100%;
-//     padding-top: 100px;
-// }
-// .titulo{
-//     width: 100%;
-//     margin: 30px;
-// }
-// .titulo h1{
-//     margin-top: 20px;
-//     text-align: center;
-//     font-size: 21px;
-//     color:white;
-//     font-weight: bolder;
-//     padding-bottom: 20px;
-// }
-//   .quienes_somos h2{
-//     text-align: center;
-//     padding-bottom: 20px;
-//     font-size: 15px;
-//     color: white;
-//     text-align: justify;
-//     margin: 30px;
-//     }
-  
-//   .persona-image{
-//     width: 130px;
-//     height: 150px;
-//   }
-//   .componentes-grid{
-//     margin: 10px 30px;
-//     align-items: center;
-//     justify-content: center;
-//   }
-
 #titulo {
-  //height: 50vh;
-  background: #fff;
+  background: $blanco;
   background-image: 
         linear-gradient(
-            rgba(255, 255, 255, 0.4), 
-            rgba(255, 255, 255, 0.5)
+            $grisclarosemit,
+            $grisclarosemit
         ),
-        url("../../assets/img/personas_sobreNosotros.png");
+        $nosotros;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -295,28 +231,27 @@ h2{
 .logo1 {
   padding-top: 3.5%;
   text-align: center;
-  margin-bottom: 20px; /* Ajusta el espaciado según tus necesidades */
+  margin-bottom: 20px;
 }
 
 .centered-logo {
-  width: 300px; /* Ajusta el tamaño según tus necesidades */
-  max-width: 100%; /* Asegura que la imagen no sea más grande que su contenedor */
+  width: 300px; 
+  max-width: 100%; // Asegura que la imagen no sea más grande que su contenedor
 }
 
 .card-img-top {
   
   width: 100%;
-  height: auto; /* Para mantener la proporción de la imagen */
+  height: auto; // Para mantener la proporción de la imagen
 }
 
 .card-body {
-  background-color: white; /* Ajusta el color de fondo deseado */
-  /* Otros estilos para card-body */
+  background-color: $blanco;
 }
 
 .card {
   background-color: transparent;
-  border: none; /* Opcional: elimina el borde si lo deseas */
+  border: none;
 }
 
 p{

@@ -141,13 +141,13 @@ p{
 
 #titulo {
     //height: 50vh;
-    background: #fff;
+    background: $blanco;
     background-image: 
           linear-gradient(
-              rgba(255, 255, 255, 0.4), 
-              rgba(255, 255, 255, 0.5)
+              $grisclarosemit, 
+              $grisclarosemit
           ),
-          url("../../assets/img/plantilla2.webp");
+          url("../../assets/img/entrenador.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -165,16 +165,15 @@ p{
   }
 
   h1{
-    color: $azul;
-  // padding-left: 150px;
-  // padding-bottom: 500px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 500;
-  font-size: 80px;
-  font-style: oblique;
-  font-weight: bolder;
-  display: flex;
-  justify-content: center;
+    left: 0;
+    color: $body;
+    font-family: $titulo;
+    font-weight: $weightTitulo;
+    font-size: $sizeEncabezado;
+    font-style: $styleEncabezado;
+    font-weight: $bolder;
+    display: flex;
+    justify-content: center;
   }
 
   #introduccion{
@@ -183,30 +182,21 @@ p{
         $dorado, 
         $dorado
     ),
-    url('/assets/img/fondofutbol.webp');
+    $recomendaciones;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;  
     display: flex;
     justify-content: center;
     align-items: center; 
-   
-    // padding-bottom: 5vh;
-    // height: 600px;
 }
 
 #introduccion h1{
-    // position: absolute;
-    // left: 0;
-    // padding-left: 150px;
-    // padding-bottom: 500px;
-    // margin-top: 200px;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: $titulo;
     font-weight: 500;
     font-size: 80px; //hacer mas pequeño para vista movil
-    font-style: oblique;
-    font-weight: bolder;
-    // margin-top: 40px;
+    font-style: $styleEncabezado;
+    font-weight: $bolder;
     color:$blanco;
 }
 
@@ -228,16 +218,6 @@ p{
     height: 45px;
 }
 
-// .list-group-item {
-//     height: auto;
-//     padding: 10px;
-//     // background-color: #212529;
-//     color: $blanco;
-//     border: none;
-//     margin-bottom: 10px;
-//     border-radius: 8px;
-// }
-
 .list-group-item-custom {
     background-color: $tarjeta;
     color: $blanco;
@@ -249,7 +229,6 @@ p{
 .list-group-item {
     height: auto;
     padding: 10px;
-    // background-color: #212529;
     color: $blanco;
     border: none;
     margin-bottom: 10px;
@@ -258,14 +237,14 @@ p{
 
 .player-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
-    gap: 10px; /* Espacio entre las columnas */
+    grid-template-columns: repeat(5, 1fr); // 5 columnas
+    gap: 10px; // Espacio entre las columnas
 }
 
 .column-3 {
     display: grid;
-    grid-template-rows: 1fr 1fr; /* 2 filas en la tercera columna */
-    gap: 10px; /* Espacio entre las filas */
+    grid-template-rows: 1fr 1fr; // 2 filas en la tercera columna
+    gap: 10px; // Espacio entre las filas
 }
 
 .player-list-item {
@@ -293,7 +272,6 @@ p{
 
 .player-details .position {
     font-size: smaller;
-    // color: #bbb;
 }
 
 .rating {
@@ -318,7 +296,7 @@ p{
 .fill {
     height: 100%;
     width: 0%;
-    background-color: $rojo; /* Color inicial del relleno */
+    background-color: $rojo; // Color inicial del relleno
 }
 
 .logo{

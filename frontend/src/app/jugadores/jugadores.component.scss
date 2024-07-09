@@ -144,10 +144,10 @@ p{
     background: #fff;
     background-image: 
           linear-gradient(
-              rgba(255, 255, 255, 0.4), 
-              rgba(255, 255, 255, 0.5)
+              $grisclarosemit,
+              $grisclarosemit
           ),
-          url("../../assets/img/plantilla2.webp");
+          $plantilla;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -165,14 +165,13 @@ p{
   }
 
   h1{
-    color: $azul;
-  // padding-left: 150px;
-  // padding-bottom: 500px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 500;
-  font-size: 80px;
-  font-style: oblique;
-  font-weight: bolder;
-  display: flex;
-  justify-content: center;
+    left: 0;
+    color: $body;
+    font-family: $titulo;
+    font-weight: $weightTitulo;
+    font-size: $sizeEncabezado;
+    font-style: $styleEncabezado;
+    font-weight: $bolder;
+    display: flex;
+    justify-content: center;
   }
