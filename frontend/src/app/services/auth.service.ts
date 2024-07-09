@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
   private apiUrl = 'http://127.0.0.1:8000/api'; // Reemplaza con la URL de tu backend Laravel
+  private isAdmin = false;
 
   constructor(private http: HttpClient) { }
 
@@ -23,11 +24,14 @@ export class AuthService {
         map(response => {
           // Guardar el token y otros datos en el almacenamiento local si es necesario
           localStorage.setItem('access_token', response.access_token);
+          this.isAdmin = response.isAdmin;
           return response;
         })
       );
   }
-
+  userIsAdmin(): boolean {
+    return this.isAdmin;
+  }
   logout() {
     // Puedes implementar el logout si es necesario
     localStorage.removeItem('access_token');
