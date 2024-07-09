@@ -9,7 +9,6 @@
 
 body{
     background-color: $body;
-    //background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     padding-top: 10vh;
     display: flex;
     align-items: center;
@@ -51,7 +50,6 @@ body{
 .inputlogin{
     background-color: $input;
     border: none;
-    //margin: 8px 0;
     margin-top: 20px;
     padding: 10px 15px;
     font-size: 13px;
@@ -61,9 +59,7 @@ body{
 }
 
 .container .sign-up button{
-
     margin-top: 20px;
-   
 }
 .form-container{
     
@@ -133,7 +129,6 @@ body{
 }
 
 .toggle-panel {
-    // background-image:  linear-gradient(to right, rgba(63, 73, 151, 0.3), rgba(0, 0, 0, 0.8)), url(../../assets/img/Resim.jpg);
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -149,12 +144,12 @@ body{
     top: 0;
     transform: translateX(0);
     transition: all 1s ease-in-out;
-    overflow: hidden; /* Asegura que el contenido no se salga del contenedor */
+    overflow: hidden;
 }
 
 
 .toggle-left{
-    background-image: linear-gradient(to left, $login, $negrosemit), url(../../assets/img/jugadorizquierda.jpg);
+    background-image: linear-gradient(to left, $login, $negrosemit), $toggle-left;
     transform: translateX(-200%);
     background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
     background-position: center; /* Centra la imagen de fondo */
@@ -273,7 +268,7 @@ body{
 }
 
 .genero {
-    margin-top: 20px; /* Espaciado entre los radios y otros elementos */
+    margin-top: 20px; 
 }
 
 .form-check {
@@ -290,13 +285,13 @@ body{
 }
 
 .drop-toggle{
-    background-color: #fff;
+    background-color: $blanco;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
     cursor: hand;
-    border: 1px solid #ccc;
+    border: 1px solid $blanco;
     width: 233px;
     text-align: left;
 }
@@ -306,13 +301,13 @@ body{
 .drop-show {
     padding: 4px;
     width: 222px;
-    background-color: #FFF;
-    border: 1px solid #BABABA;
+    background-color: $blanco;
+    border: 1px solid $blanco;
     position: absolute;
     z-index: 100;
-    -webkit-box-shadow: 0 6px 10px rgba(0,0,0,.15);
-    -moz-box-shadow: 0 6px 10px rgba(0,0,0,.15);
-    box-shadow: 0 6px 10px rgba(0,0,0,.15);
+    -webkit-box-shadow: 0 6px 10px $negrosemit;
+    -moz-box-shadow: 0 6px 10px $negrosemit;
+    box-shadow: 0 6px 10px $negrosemit;
     margin-left: 1px;
 }
 .drop-show label{
