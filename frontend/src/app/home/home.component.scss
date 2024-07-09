@@ -42,17 +42,17 @@ p{
 }
 
 h3, p{
-    color: rgb(141, 135, 135);
+    color: $grisclaro;
 }
 
 //sección de introducción
 #introduccion{
     background-image: 
     linear-gradient(
-        rgba(0, 0, 0, 0.4), 
-        rgba(0, 0, 0, 0.3)
+        $negrosemit, 
+        $negrosemit
     ),
-    url('/assets/img/fondofutbol.webp');
+    $inicio;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;  
@@ -66,10 +66,10 @@ h3, p{
 #introduccion2{
     background-image: 
     linear-gradient(
-        rgba(0, 0, 0, 0.4), 
-        rgba(0, 0, 0, 0.3)
+        $negrosemit, 
+        $negrosemit
     ),
-    url('/assets/img/fondofutbol.webp');
+    $inicio;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;  
@@ -142,7 +142,7 @@ h5{
 }
 
 p{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: $textoInicio;
     color: $p;
 }
 
@@ -155,9 +155,7 @@ p{
 #info{
     background: linear-gradient(to bottom, $azulgrisaceo, $negro);
     display: block;
-    
-    padding-top: 2vh;
-    
+    padding-top: 2vh;    
 }
 #info h1{
     display: flex;
@@ -194,9 +192,7 @@ h5{
 .logo2{
     transform: scale(.8);
 }
-#pronostico{
-   
-}
+
 .row{
     display: flex;
     justify-content: space-between;
@@ -207,8 +203,6 @@ h5{
     flex-direction: column;
     justify-self: center;
     position: relative;
-    
-
 }
 
 
@@ -249,7 +243,7 @@ img.hpe{
 
 //sección de socios
 #imgSocios{
-    background-image: url('/assets/img/fondofoco.jpg');
+    background-image: $img-socios;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;  
