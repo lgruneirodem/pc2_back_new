@@ -137,6 +137,10 @@ p{
 
 .card {
     background-color: $tarjeta !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px $negro, 0 6px 20px $negro;
+    padding: 20px;
+    color: $blanco;
 }
 
 #titulo {

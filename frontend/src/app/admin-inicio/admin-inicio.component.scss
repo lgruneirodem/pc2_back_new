@@ -20,7 +20,7 @@ body {
     top: 0;
     left: 0;
     width: 250px;
-    background-color: #343a40;
+    background-color: $grisclaro;
     padding-top: 20px;
   }
   
@@ -29,7 +29,7 @@ body {
     text-align: center;
     margin-top: 10vh;
     color: $blanco;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: $titulo;
     font-size: x-large;
   }
   

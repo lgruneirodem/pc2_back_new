@@ -135,10 +135,6 @@ p{
     }
 }
 
-.card {
-    background-color: $tarjeta !important;
-}
-
 #titulo {
     //height: 50vh;
     background: $blanco;
@@ -309,12 +305,11 @@ p{
 }
 
 .card {
-    background-color: $tarjeta;
+    background-color: $tarjeta !important;
     border-radius: 20px;
-    box-shadow: 0 4px 8px $negrosemit, 0 6px 20px $negrosemit;
+    box-shadow: 0 4px 8px $negro, 0 6px 20px $negro;
     padding: 20px;
     color: $blanco;
-    
 }
 
 .card-header {
