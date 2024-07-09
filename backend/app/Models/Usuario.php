@@ -37,4 +37,9 @@ class Usuario extends Authenticatable implements JWTSubject
             'esAdmin' => $this->esAdmin,
         ];
     }
+
+    public function plantillas()
+    {
+        return $this->hasMany(Plantilla::class, 'usuario_id', 'id');
+    }
 }

@@ -42,6 +42,11 @@ class Jugador extends Model
     // Si no utilizas timestamps, añade esto
     public $timestamps = false;
 
+    public function plantillas()
+    {
+        return $this->belongsToMany(Plantilla::class, 'plantilla_jugador', 'jugador_id', 'plantilla_id');
+    }
+
     // Definir la relación con el modelo Equipo
     public function equipo()
     {

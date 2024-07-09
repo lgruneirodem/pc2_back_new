@@ -96,4 +96,21 @@ class JugadorController extends Controller
 
         return response()->json($jugadores);
     }
+
+    public function hotPicks()
+    {
+        $jugadores = Jugador::select('Nombre', 'Foto', 'equipo_id', 'mediaPuntos', 'valor')
+                            ->where('valor', '>', 0)
+                            ->get()
+                            ->map(function ($jugador) {
+                                // Calcular la relación calidad-precio
+                                $jugador->calidad_precio = $jugador->mediaPuntos / $jugador->valor;
+                                return $jugador;
+                            })
+                            ->sortByDesc('calidad_precio')
+                            ->take(15)
+                            ->values();
+
+        return response()->json($jugadores);
+    }
 }

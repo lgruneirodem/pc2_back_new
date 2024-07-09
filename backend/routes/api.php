@@ -8,18 +8,21 @@ use App\Http\Controllers\AuthController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\EsUsuarioMiddleware;
 use App\Http\Controllers\PartidoController;
+use App\Http\Controllers\PlantillaController;
 
 Route::get('/equipos', [EquipoController::class, 'index']);
 Route::get('/partidos/j{jornada_id}', [PartidoController::class, 'partidosPorJornada']);
 
 // Ruta para obtener todos los jugadores
-
+Route::get('/jugadores/hotpicks', [JugadorController::class, 'hotPicks']);
 Route::get('/jugadores/top-goles', [JugadorController::class, 'topJugadoresPorGoles']);
 Route::get('/jugadores/top-valor', [JugadorController::class, 'topJugadoresPorValor']);
 Route::get('/jugadores/top-media', [JugadorController::class, 'topJugadoresPorMediaPuntos']);
 Route::get('/jugadores/{id}/stats', [JugadorController::class, 'getBasicStats']);
 Route::get('/jugadores/{id}', [JugadorController::class, 'show']);
 Route::get('/jugadores', [JugadorController::class, 'index']);
+
+Route::get('/plantillas/{id}/jugadores', [PlantillaController::class, 'jugadoresPorPlantilla']); // Nueva ruta
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
