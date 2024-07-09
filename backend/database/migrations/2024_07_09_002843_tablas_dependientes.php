@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('jugadores', function (Blueprint $table) {
-            $table->increments('jugador_id')->primary()->unsigned();
+            $table->integer('jugador_id')->primary()->unsigned();
             $table->integer('equipo_id')->unsigned();
             $table->foreign('equipo_id')->references('equipo_id')->on('equipos');
             $table->string('Nombre', 200);
@@ -29,6 +29,25 @@ return new class extends Migration
             $table->integer('tarjetas');
             $table->string('estado', 200);
         });
+        Schema::create('partidos', function (Blueprint $table) {
+            $table->integer('partido_id')->primary();
+            $table->integer('equipo1_id')->unsigned()->nullable();
+            $table->integer('equipo2_id')->unsigned()->nullable();
+            $table->integer('jornada_id')->unsigned()->nullable();
+            $table->string('Resultado', 200);
+
+            $table->foreign('equipo1_id')->references('equipo_id')->on('equipos');
+            $table->foreign('equipo2_id')->references('equipo_id')->on('equipos');
+            $table->foreign('jornada_id')->references('jornada_id')->on('jornadas');
+        });
+
+        Schema::create('plantillas', function (Blueprint $table) {
+            $table->integer('plantilla_id')->primary()->unsigned();
+            $table->string('Alineacion', 200);
+            $table->float('Media_puntosTotal');
+            $table->integer('saldo_actual');
+            $table->integer('deudaMax');
+        });
     }
 
     /**
@@ -37,5 +56,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('jugadores');
+        Schema::dropIfExists('partidos');
+        Schema::dropIfExists('plantillas');
     }
 };
