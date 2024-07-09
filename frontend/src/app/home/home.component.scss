@@ -23,10 +23,6 @@ h1{
     max-width: 50px;
     height: auto;
 }
-//Ya no hay p
-// .carousel-caption p {
-//     color:rgb(201, 224, 244);
-// }
 
 #equipos .equipos-container {
     display: flex;
@@ -34,12 +30,6 @@ h1{
     // overflow-x: auto;
     justify-content: space-between;
 }
-
-// .carousel-item img {
-//     max-width: 40%;
-//     height: auto;
-    
-// }
 
 h2, h3, p{
     display: flex;
@@ -93,29 +83,19 @@ h3, p{
 }
 
 #introduccion h1{
-    // position: absolute;
-    // left: 0;
-    // padding-left: 150px;
-    // padding-bottom: 500px;
-    // margin-top: 200px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 500;
-    font-size: 80px; //hacer mas pequeño para vista movil
-    font-style: oblique;
-    font-weight: bolder;
+    font-family: $titulo;
+    font-weight: $weightTitulo;
+    font-size: $sizeEncabezado;
+    font-style: $styleEncabezado;
+    font-weight: $bolder;
 }
 
 #introduccion2 h1{
-    // position: absolute;
-    // left: 0;
-    // padding-left: 150px;
-    // padding-bottom: 500px;
-    // margin-top: 200px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 500;
-    font-size: 80px; //hacer mas pequeño para vista movil
-    font-style: oblique;
-    font-weight: bolder;
+    font-family: $titulo;
+    font-weight: $weightTitulo;
+    font-size: $sizeEncabezado;
+    font-style: $styleEncabezado;
+    font-weight: $bolder;
     margin-top: 75px;
 }
 
@@ -132,8 +112,8 @@ font-size: 26px;
 }
 
 h2{
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: bold;
+    font-family: $titulo;
+    font-weight: $bold;
     color: $blanco;
     display: flex;
     justify-content: center;
@@ -141,14 +121,14 @@ h2{
 }
 
 #info h1{
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: $titulo;
     font-weight: bold;
     font-size: 45px;
     font-style: italic;
 }
 
 h5{
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: $titulo;
     font-size: large;
 }
 
@@ -163,7 +143,7 @@ h5{
 
 p{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(156, 155, 128);
+    color: $p;
 }
 
 .img-columna{
@@ -196,13 +176,8 @@ h5{
     word-wrap: keep-all; // Permite que las palabras se dividan si no caben en el contenedor
 }
 
-// h5, p {
-//     word-break: break-all;
-// }
-
 //sección de descripción
 #descripcion{
-    // background-image:  url('/assets/img/humo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;  
@@ -211,9 +186,6 @@ h5{
     padding-top: 6vh;
     padding-bottom: 6vh;
 }
-// h2 #descripcion{
-//     padding-bottom: 10vh;
-// }
 
 #descripcion img:hover{
     transform: scale(1);
@@ -231,9 +203,6 @@ h5{
     align-items: center;
 }
 .col{
-    // margin-top: 5vh;
-    // margin-bottom: 2vh;
-    // margin-left: 5vw;
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -252,9 +221,7 @@ h5{
 
 //sección de contact
 #contact {
-    // background: linear-gradient(to bottom, $azulgrisaceo, $negro);
     margin-top: 0; // Elimina el margen superior para evitar la línea blanca
-    // background-color: $azul;
     height:70vh;
 }
 
@@ -262,39 +229,22 @@ h5{
     height: 10px;
 }
 
-p #contact{
-    // margin-left: 5vw;
-}
 .color-izquierda {
-    background-color: $azulfosf; /* Color para la mitad izquierda */
+    background-color: $azulfosf; // Color para la mitad izquierda 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   
 .color-derecha {
-    background-color: $rojo; /* Color para la mitad derecha */
+    background-color: $rojo; // Color para la mitad derecha
     clip-path: polygon(0 0, 100% 0, 0 100%, 0% 100%);
 }
 .carousel-item img {
     display: block;
-    // margin-right:55vw ;
 }
-// .carousel-item {
-   
-   
-// }
+
 img.hpe{
     margin-left: -100px;
 }
-//ESTE ES EL QUE DESCOLOCA EL CAROUSEL, NO TOCAR!!
-// .carousel-inner {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//   }
-  
-//   .carousel-item {
-//     text-align: center; /* Asegura que el contenido dentro de cada item esté centrado horizontalmente */
-//   }
   
 
 //sección de socios
@@ -332,18 +282,6 @@ img.hpe{
       flex-direction: column; //Cambiar la dirección del flexbox a columna
       align-items: center; // Centrar los elementos en el eje horizontal
     }
-
-    // #equipos {
-    //     flex-wrap: wrap; // Permitir que los elementos se envuelvan en filas
-    //     justify-content: space-around; // Distribuir los elementos uniformemente en el contenedor
-    //     margin-bottom: 30px;
-    //   }
-    //   #equipos img {
-    //     max-width: 40px; // Calcular el ancho de cada imagen en función del número de columnas (en este caso, 2 columnas)
-    //     margin-right: 10px; //Agregar un espacio entre las imágenes
-    //     margin-bottom: 10px; //Agregar un espacio entre las filas
-    //     height: auto;
-    //   }
 }
 
 @media (max-width: 970px ) {
@@ -399,20 +337,15 @@ img.hpe{
     //   }
 }
 
-// .carousel-item {
-//     display: flex;
-//     justify-content: center; // Centra horizontalmente el contenido
-// }
-
 .carousel-item .d-block {
     margin: 0 auto; // Centra horizontalmente el elemento
 }
 
 .carousel-item .d-block img {
-    max-width: 100%; /* La imagen no puede ser más ancha que el contenedor */
-    max-height: 100%; /* La imagen no puede ser más alta que el contenedor */
-    width: auto; /* La imagen se ajustará automáticamente al ancho máximo */
-    height: auto; /* La imagen se ajustará automáticamente a la altura máxima */
+    max-width: 100%; // La imagen no puede ser más a/cha que el contenedor
+    max-height: 100%; // La imagen no puede ser más alta que el contenedor 
+    width: auto; // La imagen se ajustará automáticamente al ancho máximo 
+    height: auto; // La imagen se ajustará automáticamente a la altura máxima
   }  
   
 
@@ -425,30 +358,30 @@ img:hover{
 }
 
 #carouselExampleCaptions {
-    margin-bottom: 50px; /* Añadir margen inferior para separar del siguiente contenido */
+    margin-bottom: 50px; 
 }
 
 #contact {
-    height: auto; /* Ajustar la altura para que se adapte al contenido */
-    padding-bottom: 50px; /* Añadir espacio adicional en la parte inferior */
+    height: auto; 
+    padding-bottom: 50px; 
 }
 
 /* Evitar superposición de elementos del carousel */
 .carousel-item {
     height: auto;
-    margin-bottom: 50px; /* Añadir margen inferior */
+    margin-bottom: 50px;
 }
 
 #imgSocios {
-    background-image: url('/assets/img/fondofoco.jpg');
+    background-image: $socios;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding-top: 30px; /* Añadir espacio superior */
-    padding-bottom: 30px; /* Añadir espacio inferior */
+    padding-top: 30px;
+    padding-bottom: 30px; 
     height: auto;
 }
 
@@ -457,7 +390,7 @@ img:hover{
     #imgSocios {
         flex-direction: column;
         align-items: center;
-        padding-top: 30px; /* Añadir espacio superior */
-        padding-bottom: 30px; /* Añadir espacio inferior */
+        padding-top: 30px; 
+        padding-bottom: 30px; 
     }
 }
