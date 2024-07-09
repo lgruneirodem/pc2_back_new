@@ -37,22 +37,4 @@ class Usuario extends Authenticatable implements JWTSubject
             'esAdmin' => $this->esAdmin,
         ];
     }
-
-    // Hash password before saving
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($usuario) {
-            if ($usuario->isDirty('password')) {
-                $usuario->password = bcrypt($usuario->password);
-            }
-        });
-
-        static::updating(function ($usuario) {
-            if ($usuario->isDirty('password')) {
-                $usuario->password = bcrypt($usuario->password);
-            }
-        });
-    }
 }
