@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('email', 200)->unique(); // Asegura que el email sea único
             $table->string('user', 200)->unique();  // Asegura que el username sea único
             $table->string('password', 200);
-            $table->string('rol', 200);
+            $table->boolean('esAdmin')->default(false);
             $table->timestamps(); // Agrega columnas de timestamps (created_at y updated_at)
         });
     }
