@@ -4,6 +4,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { Jugador } from '../models/jugador';
+import { PlantillaService } from '../services/plantilla.service';
 import { JugadorService } from '../services/jugador.service';
 
 @Component({
@@ -16,18 +17,24 @@ import { JugadorService } from '../services/jugador.service';
 export class JugadoresComponent {
   jugadores: Jugador[] = [];
 
-  constructor(private dialogRef: MatDialog, private jugadorService: JugadorService) {}
-  // ngOnInit(): void{
-  //   // Funciones de los servicios
-  //   this.jugadorService.GetAll().subscribe(jugadorLeidos => {
-  //     // Guardamos los datos
-  //     this.jugadores = jugadorLeidos;
-  //     console.log(this.jugadores)
-  //   });
-  // }
+  constructor(private dialog: MatDialog, private plantillaService: PlantillaService) {}
 
-  openDialog(jugador:any) {
-    this.dialogRef.open(PopUpComponent, {
+  ngOnInit(): void {
+    const plantillaId = 1; // Reemplaza con el ID de la plantilla que deseas cargar
+
+    this.plantillaService.getJugadoresPorPlantilla(plantillaId).subscribe(
+      jugadores => {
+        this.jugadores = jugadores;
+        console.log(this.jugadores); // Para verificar en consola
+      },
+      error => {
+        console.error('Error al cargar jugadores:', error);
+      }
+    );
+  }
+
+  openDialog(jugador: Jugador): void {
+    this.dialog.open(PopUpComponent, {
       data: jugador
     });
   }
