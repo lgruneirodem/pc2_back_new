@@ -39,6 +39,7 @@ Route::group(['middleware' => [EsUsuarioMiddleware::class]], function () {
 
 //grupo de endpoints para usuarios Admin
 Route::group(['middleware' => [AdminMiddleware::class]], function (){
+    
 
 });
 
