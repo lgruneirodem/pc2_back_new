@@ -143,41 +143,21 @@
             <div class="col-4">
                 <div class="card custom-bg-color mb-3" style="max-width: 30rem;">
                     <div class="card-header">
-                        <h4>Estadísticas de equipos</h4>
-                        <div class="grid-container">
-                            <div class="row">
-                                <!-- Columna de la jornada -->
-                                <div class="col-md-6">
-                                    <div class="grid-item">
-                                        <div class="container">
-                                            <select (change)="onSelect($event, 3)" class="custom-select">
-                                              <option *ngFor="let data of jsonData3" [value]="data.value">{{data.label}}</option>
-                                            </select>
-                                            <!-- que cada icono lleve a su respectivo equipo -->
-                                        </div>  
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <h4>Clasificación de equipos</h4>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-custom">
+                            <li *ngFor="let equipo of equipos; let i = index" class="list-group-item list-group-item-custom">
                                 <div class="player-grid">
-                                    <div class="player-list-item">1</div>
-                                    <div class="player-list-item"><img src="../../assets/img/Real Betis.png" alt=""></div>
-                                    <div class="player-list-item">
-                                        <div class="nombre-equipo">
-                                            Betis
-                                        </div>
-                                    </div>
-                                    <div class="player-list-item">
-                                        <div class="puntuacion">
-                                            33
-                                        </div>
-                                    </div>
+                                  <div class="player-list-item">{{ i + 1 }}</div>
+                                  <div class="player-list-item">
+                                    <img [src]="'assets/img/' + equipo.nombre + '.png'" alt="{{ equipo.nombre }}">
+                                  </div>
+                                  <div class="player-list-item">
+                                    <div class="nombre-equipo">{{ equipo.nombre }}</div>
+                                  </div>
                                 </div>
-                            </li>
+                              </li>
                         </ul>
                     </div>                          
                 </div>

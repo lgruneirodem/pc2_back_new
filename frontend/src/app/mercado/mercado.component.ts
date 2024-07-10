@@ -4,17 +4,36 @@ import { Routes, RouterModule } from '@angular/router';
 import { Jugador } from '../models/jugador';
 import { JugadoresService } from '../services/jugadores.service';
 import $ from 'jquery';
+import { Equipos } from '../models/equipos';
+import { EquipoService } from '../services/equipo.service';
 
 @Component({
   selector: 'app-mercado',
-  standalone: true, // This property is not valid in Angular components
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './mercado.component.html',
   styleUrl: './mercado.component.scss'
 })
 export class MercadoComponent {
 
-  name = 'Angular';
+  equipos: Equipos[] = [];
+
+  constructor(private equipoService: EquipoService) { }
+  ngOnInit(): void {
+    this.obtenerEquipos();
+  }
+
+  obtenerEquipos() {
+    this.equipoService.getAllEquipos().subscribe(
+      equiposLeidos => {
+        this.equipos = equiposLeidos;
+      },
+      error => {
+        console.error('Error al obtener los equipos:', error);
+      }
+    );
+  }
+
   jsonData1 = [
     { label: 'Clasificación promedio', value: 'ClasificacionProm' },
     { label: 'Goles', value: 'Goles' },
@@ -63,14 +82,8 @@ export class MercadoComponent {
     { label: 'Jornada 1', value: 'Jornada1' }
   ];
 
-  jsonData3 = [
-    { label: 'Clasificación promedio', value: 'ClasificacionProm' },
-    { label: 'Goles', value: 'Goles' }
-  ];
-
   selectedValue1: string = '';
   selectedValue2: string = '';
-  selectedValue3: string = '';
 
   onSelect(event: Event, dropdown: number) {
     const value = (event.target as HTMLSelectElement).value;
@@ -78,8 +91,6 @@ export class MercadoComponent {
       this.selectedValue1 = value;
     } else if (dropdown === 2) {
       this.selectedValue2 = value;
-    } else if (dropdown === 3) {
-      this.selectedValue3 = value;
     }
   }
 
