@@ -1,11 +1,14 @@
 <!-- jugadores.component.html -->
-
-<div class="container-fluid">
-  <section id="titulo" class="showcase-area">
-    <div class="showcase-container">
-      <h1 class="main-title text-center">Mi plantilla</h1>
-    </div>
+<body>
+  <div class="container-fluid bg-dark-custom">
+    <section id="titulo" class="showcase-area">
+      <div class="showcase-container">
+        <h1 class="main-title
+        text-center">Plantilla</h1>
+      </div>
   </section>
+</div>
+</body>
   <div class="row">
     <div class="col-md-6">
       <div class="item menu">
@@ -24,7 +27,7 @@
     <div class="col-md-6">
       <div class="item lista">
         <div class="col-12" *ngIf="jugadores.length === 0">
-          <p>No hay jugadores para mostrar en la lista. </p>
+          <p>No hay jugadores para mostrar en la lista.</p>
         </div>
         <div *ngFor="let jugador of jugadores">
           <div class="nombre">
@@ -37,48 +40,47 @@
       </div>
     </div>
   </div>
+
+
+<div class="row">
+  <div class="col-12" id="btn">
+    <!-- Botón o enlace adicional si es necesario -->
+  </div>
 </div>
-
-  <div class="row">
-    <div class="col-12" id="btn">
-      <!-- Botón o enlace adicional si es necesario -->
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
-        <div class="card-header">
-          <h4>Stats</h4>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text" id="graficos">
-            <img src="../../assets/img/grafico_barras.png" alt="" width="400">
-          </p>
-        </div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card-dark-custom mb-3" style="max-width: 30rem;">
+      <div class="card-header">
+        <h4>Stats</h4>
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card text-white bg-dark mb-3" style="max-width: 30rem;">
-        <div class="card-header">
-          <h4>Valor medio de la plantilla</h4>
-        </div>
-        <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="display: inline-block;">
-          Filtrar
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Delanteros</a></li>
-          <li><a class="dropdown-item" href="#">Porteros</a></li>
-          <li><a class="dropdown-item" href="#">Mediocentros</a></li>
-          <li><a class="dropdown-item" href="#">Todos</a></li>
-        </ul>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text" id="graficos">
-            <img src="../../assets/img/grafico_barras.png" alt="" width="400">
-          </p>
-        </div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text" id="graficos">
+          <img src="../../assets/img/grafico_barras.png" alt="" width="400">
+        </p>
       </div>
     </div>
   </div>
-
+  <div class="col-md-6">
+    <div class="card card-dark-custom mb-3" style="max-width: 30rem;">
+      <div class="card-header">
+        <h4>Valor medio de la plantilla</h4>
+      </div>
+      <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="display: inline-block;">
+        Filtrar
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Delanteros</a></li>
+        <li><a class="dropdown-item" href="#">Porteros</a></li>
+        <li><a class="dropdown-item" href="#">Mediocentros</a></li>
+        <li><a class="dropdown-item" href="#">Todos</a></li>
+      </ul>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text" id="graficos">
+          <img src="../../assets/img/grafico_barras.png" alt="" width="400">
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
