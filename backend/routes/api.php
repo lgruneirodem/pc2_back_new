@@ -19,6 +19,8 @@ Route::get('/check-admin/{email}', [AuthController::class, 'checkAdmin']);
 
 Route::get('/equipos', [EquipoController::class, 'index']);
 
+Route::get('/usuarios', [UsuarioController::class, 'index']);
+
 
 Route::get('/partidos/j{jornada_id}', [PartidoController::class, 'partidosPorJornada']);
 
@@ -40,7 +42,7 @@ Route::middleware(['jwt.user'])->group(function () {
 
 //grupo de endpoints para usuarios Admin
 Route::middleware(['jwt.admin'])->group(function () {  
-    Route::get('/usuarios', [UsuarioController::class, 'index']);
+
 });
 
 

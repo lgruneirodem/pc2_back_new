@@ -1,83 +1,34 @@
 
 .<body>
   <div class="container">
-    <!-- <div class="col-2 sidebar">
-        <div *ngFor="let admin of admins" class="sidebar-header">
-          <h2>¡Bienvenido/a , <br> {{admin.nombre}}!</h2>
-        </div>
-        <div class="sidebar-footer">
-            <a routerLink="['/Login']" class="btn btn-danger btn-block">Cerrar sesión</a>
-        </div>
-    </div> -->
       <div class="pt-3 row">
-          <!-- <div class="col-4">
-              <div class="card text-white bg-dark mb-3 card-custom">
-                  <div class="card-header">
-                      <h2>Crecimiento de los usuarios</h2>
-                  </div>
-                  <div class="card-body">
-                      <h5 class="card-title"></h5>
-                      <p class="card-text" id="graficos">
-                          <img src="../../assets/img/grafico_barras.png" alt="" width="400">
-                      </p>
-                  </div>
-              </div>
-          </div>
-          <div class="col-4">
-              <div class="card text-white bg-dark mb-3">
-                  <div class="card-header"><h2>Edad usuarios</h2></div>
-                  <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-              </div>
-          </div>
-          <div class="col-4">
-              <div class="card text-white bg-dark mb-3">
-                  <div class="card-header"><h2>Género usuarios</h2></div>
-                  <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-              </div>
-          </div>
-      </div> -->
+
       <div class="pt-3 row">
-              <div class="card text-white bg-dark mb-3 card-custom-2">
-                  <div class="card-header text-start">
-                      <div class="d-flex justify-content-between align-items-center">
-                          <h1>Gestión de los usuarios</h1>
-                          
-                      </div>
+        <div class="pt-3 row">
+          <div class="card text-white bg-dark mb-3 card-custom-2">
+            <div class="card-header text-start">
+              <div class="d-flex justify-content-between align-items-center">
+                <h1>Gestión de los usuarios</h1>
+              </div>
+            </div>
+            <div class="card-body">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-custom" *ngFor="let usuario of usuarios">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <p class="user-name">{{ usuario.nombre }}</p>
+                    <p class="user-email">{{ usuario.email }}</p>
+                    <p class="user-role">{{ usuario.esAdmin ? 'Admin' : 'Usuario' }}</p>
+                    <div class="btn-group">
+                      <ul class="dropdown-menu">
+                      </ul>
                     </div>
-                    <div class="card-body">
-                      <ul class="list-group">
-                        <li class="list-group-item list-group-item-custom ">
-                            <p class="user-name" style="display: inline-block;">Usuario 1</p>
-                            <button type="button" class="btn btn-danger">Eliminar</button>
-                            <div class="btn-group">
-                              <button type="button" class="btn dropdown-toggle custom-dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="display: inline-block;">
-                                Acciones
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" (click)="openModel()" id="passModal">Cambiar contraseña</button></li>
-                              </ul>
-                              </div>
-                        <li class="separator"></li>
-                        <li class="list-group-item list-group-item-custom ">
-                          <h6 class="user-name" style="display: inline-block;">Usuario 2</h6>
-                          <button type="button" class="btn btn-danger">Eliminar</button>
-                          <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle custom-dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="display: inline-block;">
-                              Acciones
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><button class="dropdown-item" (click)="openModel()" id="passModal">Cambiar contraseña</button></li>
-                            </ul>
-                          </div>
-                        
-                    </ul>
-              </div>
+                  </div>
+                </li>
+                <li class="separator"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
           </div>
       </div>
   </div>

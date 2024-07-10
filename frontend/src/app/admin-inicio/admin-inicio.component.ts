@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../services/usuario.service';
+import { Usuario } from '../models/usuario'; // Importa la interfaz Usuario
 import { CommonModule } from '@angular/common';
-
-interface Usuario {
-  nombre: string;
-  correo: string;
-}
-interface Administrador {
-  nombre: string;
-}
 
 @Component({
   selector: 'app-admin-inicio',
@@ -17,36 +11,41 @@ interface Administrador {
   styleUrls: ['./admin-inicio.component.scss']
 })
 export class AdminInicioComponent implements OnInit {
-  usuarios: Usuario[] = [
-    { nombre: "Usuario 1", correo: "usuario1@example.com" },
-    { nombre: "Usuario 2", correo: "usuario2@example.com" },
-    { nombre: "Usuario 3", correo: "usuario3@example.com" }
-  ];
-  
-  admins: Administrador[] = [
-    { nombre: "admin 1" }
-  ];
-
+  usuarios: Usuario[] = [];
   usuariosFiltrados: Usuario[] = [];
   searchText: string = '';
 
-  constructor() { }
+  constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
-    this.usuariosFiltrados = this.usuarios;
+    this.loadUsuarios();
+  }
+
+  loadUsuarios(): void {
+    this.usuarioService.getUsuarios().subscribe(
+      (response: Usuario[]) => {
+        this.usuarios = response;
+        this.usuariosFiltrados = this.usuarios; // Inicialmente mostrar todos los usuarios
+      },
+      (error) => {
+        console.error('Error al cargar usuarios', error);
+        // Manejar errores aquí
+      }
+    );
   }
 
   onSearchTextChanged(): void {
     if (this.searchText) {
       this.usuariosFiltrados = this.usuarios.filter(usuario =>
-        usuario.nombre.toLowerCase().includes(this.searchText.toLowerCase()));
+        usuario.nombre.toLowerCase().includes(this.searchText.toLowerCase())
+      );
     } else {
       this.usuariosFiltrados = this.usuarios;
     }
   }
 
   openModel(): void {
-    // Logic to open the modal goes here
-    console.log("Modal opened");
+    // Lógica para abrir el modal
+    console.log("Modal abierto");
   }
 }
