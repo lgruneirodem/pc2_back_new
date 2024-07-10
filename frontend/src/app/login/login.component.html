@@ -1,17 +1,18 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form id="signUpForm" (ngSubmit)="register()" >
-                <h1>Crea una cuenta</h1>
-                <input class="inputlogin" type="text" placeholder="Nombre"[(ngModel)]="credentials.nombre" name="nombre"  required>
-                <input class="inputlogin" type="email" placeholder="Correo" [(ngModel)]="credentials.email" name="email" required>
-                <input class="inputlogin" type="user" placeholder="Usuario "[(ngModel)]="credentials.user" name="user" required>
-                <input class="inputlogin" type="password" placeholder="Contraseña" [(ngModel)]="credentials.password" name="password" required>
-                <input class="inputlogin" type="password" placeholder="Confirma la contraseña" [(ngModel)]="credentials.password_confirmation" name="password_confirmation" required>
-                <button type="submit">Registrarse</button>
+            <form id="signUpForm" (ngSubmit)="register()">
+              <h1>Crea una cuenta</h1>
+              <input class="inputlogin" type="text" placeholder="Nombre" [(ngModel)]="credentials.nombre" name="nombre" required>
+              <input class="inputlogin" type="email" placeholder="Correo" [(ngModel)]="credentials.email" name="email" required>
+              <input class="inputlogin" type="text" placeholder="Usuario" [(ngModel)]="credentials.user" name="user" required>
+              <input class="inputlogin" type="password" placeholder="Contraseña" [(ngModel)]="credentials.password" name="password" required>
+              <input class="inputlogin" type="password" placeholder="Confirma la contraseña" [(ngModel)]="credentials.password_confirmation" name="password_confirmation" required>
+              <button type="submit">Registrarse</button>
             </form>  
-        </div>
-        <div id="container" class="form-container sign-in">
+          </div>
+          
+          <div id="container" class="form-container sign-in">
             <form id="signInForm" (ngSubmit)="login()">
               <h1>Accede a tu cuenta</h1>
               <input class="inputlogin" type="email" placeholder="Correo" [(ngModel)]="loginCredentials.email" name="email" required>

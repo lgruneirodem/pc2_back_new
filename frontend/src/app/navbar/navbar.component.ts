@@ -1,6 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../services/auth.service';
+import { AuthStateService } from '../services/auth-state-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,12 +16,25 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
 
-  // color1: string = environment.color1;
-  // color2: string = environment.color2;
-  // color2semit: string = environment.color2semit;
-  // color3: string = environment.color3;
-
   scrolled: boolean = false;
+  isAdmin: boolean = false;
+  isLoggedIn: boolean = false;
+
+  constructor(private authStateService: AuthStateService, private authService: AuthService) {}
+
+  ngOnInit() {
+    this.authStateService.isLoggedIn$.subscribe(
+      isLoggedIn => this.isLoggedIn = isLoggedIn
+    );
+    this.authStateService.isAdmin$.subscribe(
+      isAdmin => this.isAdmin = isAdmin
+    );
+  }
+
+  logout() {
+    this.authService.logout();
+    // Handle additional logout logic here if needed
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -29,5 +44,5 @@ export class NavbarComponent {
     } else if (this.scrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
       this.scrolled = false;
     }
-}
+  }
 }

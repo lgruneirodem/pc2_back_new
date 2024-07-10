@@ -56,7 +56,16 @@ class AuthController extends Controller
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
-
         
+    }
+    public function checkAdmin($email)
+    {
+        $user = Usuario::where('email', $email)->first();
+    
+        if ($user) {
+            return response()->json($user->esAdmin);
+        }
+    
+        return response()->json(false);
     }
 }

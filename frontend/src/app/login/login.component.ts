@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     password_confirmation: '',
     esAdmin: false
   };
-
+  
   loginCredentials = {
     email: '',
     password: ''
@@ -41,28 +41,27 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.loginCredentials).subscribe(
-      () => {
-        console.log('Login exitoso');
-        // Redireccionar a otra página después del login (por ejemplo, al dashboard)
-        this.router.navigate(['/Inicio']);
+      response => {
+        console.log('Login successful', response);
+        this.router.navigate(['/Mercado']);
       },
       error => {
-        console.log('Error en el login:', error);
-        // Mostrar mensaje de error al usuario si es necesario
+        console.error('Login failed', error);
+        // handle error
+        alert('Inicio de sesión fallido. Por favor, verifica tus credenciales.');
       }
     );
   }
 
   register() {
     this.authService.register(this.credentials).subscribe(
-      () => {
-        console.log('Registro exitoso');
-        // Redireccionar a otra página después del registro (por ejemplo, al login)
-        this.router.navigate(['/Inicio']);
+      response => {
+        console.log('Registration successful', response);
+        this.router.navigate(['/Mercado']);
       },
       error => {
-        console.log('Error en el registro:', error);
-        // Mostrar mensaje de error al usuario si es necesario
+        console.error('Registration failed', error);
+        // handle error
       }
     );
   }

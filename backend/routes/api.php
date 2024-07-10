@@ -14,7 +14,8 @@ use App\Http\Controllers\UsuarioController;
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/usuarios', [UsuarioController::class, 'index']); // Nueva ruta
+Route::get('/check-admin/{email}', [AuthController::class, 'checkAdmin']);
+
 
 Route::get('/equipos', [EquipoController::class, 'index']);
 
@@ -34,13 +35,12 @@ Route::get('/plantillas/{id}/stats', [PlantillaController::class, 'statsPlantill
 Route::get('/plantillas/{id}/jugadores', [PlantillaController::class, 'jugadoresPorPlantilla']);
 
 //grupo de endpoints para usuarios EsUsuario
-Route::group(['middleware' => [EsUsuarioMiddleware::class]], function () {
+Route::middleware(['jwt.user'])->group(function () {
 });
 
 //grupo de endpoints para usuarios Admin
-Route::group(['middleware' => [AdminMiddleware::class]], function (){
-    
-
+Route::middleware(['jwt.admin'])->group(function () {  
+    Route::get('/usuarios', [UsuarioController::class, 'index']);
 });
 
 
