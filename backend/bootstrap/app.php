@@ -3,8 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use App\Http\Middleware\AdminMiddleware;
-use App\Http\Middleware\EsUsuarioMiddleware;
+use \App\Http\Middleware\AdminMiddleware;
+use \App\Http\Middleware\EsUsuarioMiddleware;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -14,11 +14,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
-        $middleware->alias([
-            'jwt.user' => EsUsuarioMiddleware::class,
-            'jwt.admin' => AdminMiddleware::class
-        ]);
+    //     $middleware->alias([
+    //         'isAdmin', AdminMiddleware::class,
+    //         'isUsuario', EsUsuarioMiddleware::class,
+    // ]);
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

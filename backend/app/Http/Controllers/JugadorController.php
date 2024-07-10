@@ -69,7 +69,7 @@ class JugadorController extends Controller
 
     public function topJugadores()
     {
-        $jugadores = Jugador::select('Nombre', 'Foto', 'equipo_id', 'puntos')
+        $jugadores = Jugador::select('Nombre', 'jugador_id', 'equipo_id', 'puntos')
                             ->orderByDesc('puntos')
                             ->take(15)
                             ->get();
@@ -79,7 +79,7 @@ class JugadorController extends Controller
 
     public function topJugadoresPorGoles()
     {
-        $jugadores = Jugador::select('Nombre', 'Foto', 'equipo_id', 'goles')
+        $jugadores = Jugador::select('Nombre', 'jugador_id', 'equipo_id', 'goles')
                             ->orderByDesc('goles')
                             ->take(15)
                             ->get();
@@ -89,7 +89,7 @@ class JugadorController extends Controller
 
     public function topJugadoresPorValor()
     {
-        $jugadores = Jugador::select('Nombre', 'Foto', 'equipo_id', 'valor')
+        $jugadores = Jugador::select('Nombre', 'jugador_id', 'equipo_id', 'valor')
                             ->orderByDesc('valor')
                             ->take(15)
                             ->get();
@@ -99,7 +99,7 @@ class JugadorController extends Controller
 
     public function topJugadoresPorMediaPuntos()
     {
-        $jugadores = Jugador::select('Nombre', 'Foto', 'equipo_id', 'mediaPuntos')
+        $jugadores = Jugador::select('Nombre', 'jugador_id', 'equipo_id', 'mediaPuntos')
                             ->orderByDesc('mediaPuntos')
                             ->take(15)
                             ->get();
@@ -109,7 +109,7 @@ class JugadorController extends Controller
 
     public function hotPicks()
     {
-        $jugadores = Jugador::select('Nombre', 'Foto', 'equipo_id', 'mediaPuntos', 'valor')
+        $jugadores = Jugador::select('Nombre', 'jugador_id', 'equipo_id', 'mediaPuntos', 'valor')
                             ->where('valor', '>', 0)
                             ->get()
                             ->map(function ($jugador) {

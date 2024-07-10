@@ -10,10 +10,11 @@ class EsUsuarioMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && !Auth::user()->isAdmin) {
+        if (auth()->user() && !auth()->user()->admin) {
             return $next($request);
         }
 
-        return response()->json(['error' => 'Unauthorized'], 401);
+        return response()->json(['error' => 'No autorizado'], 403);
     }
+    
 }

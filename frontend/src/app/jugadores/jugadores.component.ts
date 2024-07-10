@@ -4,7 +4,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { Jugador } from '../models/jugador';
-import { JugadoresService } from '../services/jugadores.service';
+import { JugadorService } from '../services/jugador.service';
 
 @Component({
   selector: 'app-jugadores',
@@ -16,15 +16,15 @@ import { JugadoresService } from '../services/jugadores.service';
 export class JugadoresComponent {
   jugadores: Jugador[] = [];
 
-  constructor(private dialogRef: MatDialog, private jugadoresService: JugadoresService) {}
-  ngOnInit(): void{
-    // Funciones de los servicios
-    this.jugadoresService.GetAll().subscribe(jugadoresLeidos => {
-      // Guardamos los datos
-      this.jugadores = jugadoresLeidos;
-      console.log(this.jugadores)
-    });
-  }
+  constructor(private dialogRef: MatDialog, private jugadorService: JugadorService) {}
+  // ngOnInit(): void{
+  //   // Funciones de los servicios
+  //   this.jugadorService.GetAll().subscribe(jugadorLeidos => {
+  //     // Guardamos los datos
+  //     this.jugadores = jugadorLeidos;
+  //     console.log(this.jugadores)
+  //   });
+  // }
 
   openDialog(jugador:any) {
     this.dialogRef.open(PopUpComponent, {

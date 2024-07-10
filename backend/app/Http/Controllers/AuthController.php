@@ -41,14 +41,10 @@ class AuthController extends Controller
     // Método para iniciar sesión
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = request(['email', 'password']);
 
-        try {
-            if (!$token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 'Invalid credentials'], 400);
-            }
-        } catch (JWTException $e) {
-            return response()->json(['error' => 'Could not create token'], 500);
+        if (!$token = auth()->attempt($credentials)) {
+            return response()->json(['error' => 'No autorizado'], 401);
         }
 
         return response()->json([

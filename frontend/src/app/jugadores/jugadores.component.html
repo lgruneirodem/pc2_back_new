@@ -15,9 +15,9 @@
                     <div *ngFor="let jugador of jugadores">
                       <div class="nombre"></div>
                       <a class="jugador" (click)="openDialog(jugador)">
-                        <div class="box {{jugador.clas}}">
+                        <!-- <div class="box {{jugador.clas}}">
                           <img src="../../assets/img/{{jugador.equipo}}.png" class="imagen">
-                        </div>
+                        </div> -->
                       </a>
                     </div>                                   
                 </div>
@@ -30,8 +30,8 @@
                     <div *ngFor="let jugador of jugadores">
                         <div class="nombre">
                             <a class="jugador">
-                                <img src="../../assets/img/{{jugador.equipo}}.png" class="icono" >
-                                <p>{{jugador.name}}</p>
+                                <img src="../../assets/img/{{jugador.equipo_id}}.png" class="icono" >
+                                <p>{{jugador.Nombre}}</p>
                             </a>
                         </div>
                     </div>

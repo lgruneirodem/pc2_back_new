@@ -6,109 +6,54 @@
         </div>
       </section>
         <div class="row">
-            <!--Tarjeta 1-->
-            <div class="col-4">
-                <div class="card custom-bg-color mb-3" style="max-width: 30rem;">
-                    <div class="card-header">
-                        <h4>Mejores jugadores</h4>
-                        <div class="btn-group">
-                            <div class="container">
-                                <select (change)="onSelect($event, 1)" class="custom-select">
-                                  <option *ngFor="let data of jsonData1" [value]="data.value">{{data.label}}</option>
-                                </select>
-                            </div>                    
-                        </div>                        
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-custom">
-                                <div class="player-grid">
-                                    <div class="player-list-item">1</div>
-                                    <div class="player-list-item"><img src="../../assets/img/angel.jpeg" alt=""></div>
-                                   
-                                        <div class="player-list-item">Jude Bellingham</div>
-                                    
-                                    <div class="player-list-item">
-                                        <div class="puntuacion">
-                                            33
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Aqui van los demás elementos -->
-                        </ul>
-                    </div>
-                </div>
+            <div id="introduccion" class="seccion">
+                <h1>HOT PICKS</h1>  
             </div>
-            <!--Tarjeta 2-->
-            <div class="col-4">
-                <div class="card custom-bg-color mb-3" style="max-width: 30rem;">
-                    <div class="card-header">
-                        <h4>Historial de partidos</h4>
-                        <div class="grid-container">
-                            <div class="row">
-                                <!-- Columna de la jornada -->
-                                <div class="col-md-6">
-                                    <div class="grid-item">
-                                        <div class="container">
-                                            <select (change)="onSelect($event, 2)" class="custom-select">
-                                              <option *ngFor="let data of jsonData2" [value]="data.value">{{data.label}}</option>
-                                            </select>
-                                            <!-- <p *ngIf="selectedValue2">Selected Value: {{selectedValue2}}</p> -->
-                                        </div>  
-                                    </div>
-                                </div>
+        
+              <!-- Tarjeta de Jugadores recomendados centrada -->
+              <div class="container">
+                <h2>Hot Picks</h2>
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let jugador of hotPicks">
+                        <div class="card">
+                            <img class="card-img-top" [src]="'assets/img/jugadores/' + jugador.jugador_id + '.png'" alt="{{ jugador.Nombre }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ jugador.Nombre }}</h5>
+                                <p class="card-text">Posición: {{ jugador.Posicion }}</p>
+                                <p class="card-text">Media de Puntos: {{ jugador.mediaPuntos }}</p>
+                                <p class="card-text">Valor: {{ jugador.valor }}</p>
+                                <!-- Agrega más detalles según lo necesario -->
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li *ngFor="let partido of partidos" class="list-group-item list-group-item-custom">
-                                <div class="grid-container">
-                                    <div class="row">
-                                        <!-- Columna de los equipos y números -->
-                                        <div class="col-md-10">
-                                            <!-- Fila del equipo 1 -->
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="column-3">
-                                                        <div class="player-list-item">
-                                                            <div class="equipo">
-                                                                <img [src]="'assets/img/' + partido.equipo1 + '.png'" alt="{{ partido.equipo1 }} logo"> {{partido.equipo1}}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="column-3">
-                                                        <div class="player-list-item">
-                                                            <div class="equipo">
-                                                                {{ partido.Resultado }}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Fila del equipo 2 -->
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="column-3">
-                                                        <div class="player-list-item">
-                                                            <div class="equipo">
-                                                                <img [src]="'assets/img/' + partido.equipo2 + '.png'" alt="{{ partido.equipo2 }} logo"> {{partido.equipo2}}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
+            <!--Tarjeta 1-->
+            <div class="col-4">
+                <div class="card custom-bg-color mb-3" style="max-width: 30rem;">
+                  <div class="card-header">
+                    <h4>Mejores jugadores</h4>                      
+                  </div>
+                  <div class="card-body">
+                    <div class="list-group">
+                      <div *ngFor="let jugador of jugadoresTop" class="list-group-item list-group-item-custom">
+                        <div class="player-card">
+                          <img class="card-img-top" [src]="'assets/img/jugadores/' + jugador.jugador_id + '.png'" alt="{{ jugador.Nombre }}">
+                          <div class="card-body">
+                            <h5 class="card-title">{{ jugador.Nombre }}</h5>
+                            <p class="card-text">Posición: {{ jugador.Posicion }}</p>
+                            <p class="card-text">Media: {{ jugador.mediaPuntos }}</p>
+                            <p class="card-text">Valor: {{ jugador.valor }}</p>
+                            <!-- Agrega más detalles según lo necesario -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            <!--Tarjeta 2-->
 
             <!--Tarjeta 3-->
             <div class="col-4">
@@ -133,21 +78,5 @@
                     </div>                          
                 </div>
             </div>
-
-        <div id="introduccion" class="seccion">
-          <h1>HOT PICKS</h1>  
-      </div>
-
-      <!-- Tarjeta de Jugadores recomendados centrada -->
-      <div class="col-4">
-          <div class="card custom-bg-color mb-3" style="max-width: 30rem;">
-              <div class="card-header">
-                  <h4>Jugadores recomendados</h4>
-              </div>
-              <div class="card-body">
-                  <p>Este es el contenido de la nueva tarjeta.</p>
-              </div>
-          </div>
-      </div>
 </div>
 </div>

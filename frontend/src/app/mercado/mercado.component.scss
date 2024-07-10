@@ -227,9 +227,24 @@ p{
     padding: 10px;
     color: $blanco;
     border: none;
-    margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 1rem;
     border-radius: 8px;
 }
+
+.player-card {
+    width: 100%;
+    height: 7%;
+  }
+
+.card-body {
+  padding: 1rem; /* Añade un espacio interno a la tarjeta */
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+}  
 
 .player-grid {
     display: grid;
@@ -315,3 +330,15 @@ p{
 .card-header {
     border-bottom: 0.2px solid $blanco;
 }
+
+.card-img-top {
+    max-width: 70px; /* Ajusta el ancho máximo de la imagen */
+    height: auto;    /* Permite que la altura se ajuste automáticamente */
+    /* Puedes ajustar otras propiedades según tus necesidades */
+  }
+  
+  /* Ejemplo: tamaño específico para las imágenes */
+  .card-img-top-small {
+    max-width: 50px; /* Ejemplo: establece un ancho máximo específico */
+    height: auto;
+  }

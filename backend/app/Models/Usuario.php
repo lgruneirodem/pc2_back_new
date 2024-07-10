@@ -35,6 +35,7 @@ class Usuario extends Authenticatable implements JWTSubject
     {
         return [
             'esAdmin' => $this->esAdmin,
+            'usuario_id' => $this->usuario_id,
         ];
     }
 
