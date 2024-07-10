@@ -16,6 +16,4 @@ export class PartidoService {
     getPartidosPorJornada(jornadaId: number): Observable<Partido[]> {
         return this.http.get<Partido[]>(`${this.apiUrl}/api/partidos/j${jornadaId}`);
     }
-
-    // Otros métodos del servicio según tus necesidades
 }

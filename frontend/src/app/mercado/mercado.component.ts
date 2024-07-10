@@ -6,6 +6,8 @@ import { JugadoresService } from '../services/jugadores.service';
 import $ from 'jquery';
 import { Equipos } from '../models/equipos';
 import { EquipoService } from '../services/equipo.service';
+import { PartidoService } from '../services/partido.service';
+import { Partido }  from '../models/partido';
 
 @Component({
   selector: 'app-mercado',
@@ -17,10 +19,13 @@ import { EquipoService } from '../services/equipo.service';
 export class MercadoComponent {
 
   equipos: Equipos[] = [];
+  partidos: Partido[] = [];
+  jornadaActual: number = 1;
 
-  constructor(private equipoService: EquipoService) { }
+  constructor(private equipoService: EquipoService, private partidoService: PartidoService) { }
   ngOnInit(): void {
     this.obtenerEquipos();
+    this.obtenerPartidos(this.jornadaActual);
   }
 
   obtenerEquipos() {
@@ -32,6 +37,25 @@ export class MercadoComponent {
         console.error('Error al obtener los equipos:', error);
       }
     );
+  }
+
+  obtenerPartidos(jornadaId: number): void {
+    this.partidoService.getPartidosPorJornada(jornadaId).subscribe(
+      partidosLeidos => {
+        this.partidos = partidosLeidos;
+      },
+      error => {
+        console.error('Error al obtener los partidos:', error);
+      }
+    );
+  }
+
+  onSelect(event: Event, dropdown: number): void {
+    const value = (event.target as HTMLSelectElement).value;
+    if (dropdown === 2) {
+      this.jornadaActual = +value; // Convertir a número y asignar como jornada actual
+      this.obtenerPartidos(this.jornadaActual);
+    }
   }
 
   jsonData1 = [
@@ -85,32 +109,10 @@ export class MercadoComponent {
   selectedValue1: string = '';
   selectedValue2: string = '';
 
-  onSelect(event: Event, dropdown: number) {
-    const value = (event.target as HTMLSelectElement).value;
-    if (dropdown === 1) {
-      this.selectedValue1 = value;
-    } else if (dropdown === 2) {
-      this.selectedValue2 = value;
-    }
-  }
-
   puntuacion: number = 33;
 
-  getColor(): string {
-    if (this.puntuacion < 50) {
-      return '#f00'; 
-    } else if (this.puntuacion >= 50 && this.puntuacion < 70) {
-      return '#ff0'; 
-    } else if (this.puntuacion >= 70 && this.puntuacion < 90) {
-      return '#0f0'; 
-    } else {
-      return '#00f'; 
-    }
-  }
-
   closeModel() {
-    // You might want to implement this method properly
-    // For now, let's remove the error
+
   }
 
   openModel() {
